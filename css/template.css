@@ -1,0 +1,122 @@
+body{
+
+	background-image:url(../layout/bg.png);
+	width: 850px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 40px;
+}
+
+
+#clear{
+	clear: both;
+}
+
+#topo{
+
+	background-image:url(../images/enigma.jpg);
+	background-repeat: no-repeat;
+	margin-left: auto;
+	margin-right: auto;
+	width: 500px;
+	height: 150px;
+	/*border-style: solid;
+	border-width:3px;
+	border-color:#1E90FF;*/
+	margin-bottom: 3px;
+
+	
+
+}
+
+#corpo{
+	background-color: #000;
+	margin-left: auto;
+	margin-right: auto;
+	height: auto;
+
+}
+
+#players{
+	background-color: #9F0;
+	width: 300px;
+	float: left;
+	
+}
+
+#mesa{
+	background-color: #999;
+	width: 660px;
+	float: left;
+	
+}
+
+#content{
+	color: #FFF;
+	text-align: center;
+	background-color: #000;
+
+
+}
+
+#rodape{
+	height: 25px;
+	background-color: #333;
+	color: #FFF;
+	margin-top: 95px;
+}
+
+.avatar {
+	background-image:url(../images/mulher.png);
+	background-repeat: no-repeat;
+	text-align: left;
+	margin-left: 30px;
+}
+
+.balaodialogo {
+	position: relative;
+	margin-top: 30px;
+	margin-left: 120px;
+	margin-bottom: 40px;
+    background-color: #88b7d5;
+	border: 4px solid #c2e1f5;
+    border-radius: 30px;
+    width: 680px;
+    height: auto;
+    line-height: 20px; /* vertically center */
+    color: black;
+    text-align: center;
+}
+	
+.balaodialogo:after, .balaodialogo:before { 
+	right: 100%; 
+	border: solid transparent; 
+	content: " "; 
+	height: 0; 
+	width: 0; 
+	position: absolute; 
+	pointer-events: none; 
+}
+     
+.balaodialogo:after {
+	border-color: rgba(136, 183, 213, 0); 
+	border-right-color: #88b7d5; 
+	border-width: 30px; 
+	top: 50%; 
+	margin-top: -30px; 
+}
+
+.balaodialogo:before { 
+	border-color: rgba(194, 225, 245, 0); 
+	border-right-color: #c2e1f5; 
+	border-width: 36px; 
+	top: 50%; 
+	margin-top: -36px; 
+}
+
+.clean-gray{
+	border:solid 1px #DEDEDE;
+	color:#222222;
+	padding:4px;
+	text-align:center;
+}
