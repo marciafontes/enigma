@@ -86,7 +86,7 @@ if(isset($_GET["a"])){
 
 	<table align="center" style="boder:0; width:400px; height:100px">
 		<tr>
-		<td style="background:lightgreen; color:#000"> a) <?php echo("<a href=\"sistema.php?page=jogo&id=$id&a=1\">".$quiz->rows[$qNum]["op1"]."</a>")?></td>
+		<td style="background:lightgreen; color:#000"> a) <?php echo '<a href="sistema.php?page=jogo&id=',$id,'&a=1">',$quiz->rows[$qNum]["op1"],'</a>'; ?></td>
 		</tr><tr>
 		<td style="background:lightblue; color:#000"> b) <?php echo("<a href=\"sistema.php?page=jogo&id=$id&a=2\">".$quiz->rows[$qNum]["op2"]."</a>")?></td>
 		</tr><tr> 

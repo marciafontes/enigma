@@ -25,7 +25,7 @@ while ($i < $qNum)
 ?>
 
 <div class="hi-icon-wrap2 hi-icon-effect-2 hi-icon-effect-2">
-					<a href="sistema.php?page=jogo&id=<?=$i?>" class="hi-icon hi-icon-location" alt="Rodada">Rodada <?php echo $i?></a>
+					<a href="sistema.php?page=jogo&id=<?php echo $i?>" class="hi-icon hi-icon-location" alt="Rodada">Rodada <?php echo $i?></a>
 </div>
 	
 <?php
