@@ -20,4 +20,9 @@ class Import
 	{
 		self::includeFile('../view/' . $file . '.php');
 	}
+	
+	public static function controller($file)
+	{
+		self::includeFile('../controller/' . $file . '.php');
+	}
 }

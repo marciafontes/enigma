@@ -4,6 +4,10 @@
 
 <script src="js/jv-1.js" type="text/javascript"></script>
 <script src="js/jv-2.font.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="../../css/template.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/default.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/component.css" />
+	<script src="../../js/modern.custom.js"></script>
 <script type="text/javascript">
 	Cufon.replace('h1',{ textShadow: '1px 1px #fff'});
 	Cufon.replace('h2',{ textShadow: '1px 1px #fff'});

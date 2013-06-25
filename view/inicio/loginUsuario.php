@@ -1,4 +1,11 @@
-		<div class="wrapper">
+<?php 
+include_once '../../helpers/Import.php';
+Import::controller('ControllerUsuario');
+
+$controllerUsuario = new ControllerUsuario();
+$controllerUsuario->validaUsuario();
+?>
+<div class="wrapper">
 		<div class="content">
 				<div id="form_wrapper" class="form_wrapper">
 					<form class="register">
@@ -47,7 +54,7 @@
 							<div class="clear"></div>
 						</div>
 					</form>
-					<form class="login active" action="index.php?page=validaUsuario<?php //valida_usuario.php?>" method="post">
+					<form class="login active" action="index.php?page=loginUsuario" method="post">
 						<h3>Acesso ao Usuario</h3>
 						<div>
 							<label>Usuario:</label>	
@@ -61,7 +68,7 @@
 						</div>
 						<div class="bottom">
 							<div class="remember"><input type="checkbox" /><span>Continuar conectado</span></div>
-							<input type="submit" value="Login"></input>
+							<input type="submit" name="logarUsuario" value="Logar"></input>
 							<a href="register.html" rel="register" class="linkform">Você não tem uma conta ainda? Registre-se aqui!</a>
 							<div class="clear"></div>
 						</div>
