@@ -9,10 +9,10 @@ class ControllerUsuario extends AbstractController
 {
 	public function getAction()
 	{
-		//@TODO: implementar camada action para comunicar BD
+		//@TODO: implementar camada Model com o action para manipular os dados do DAO e BEAN
 	}
 	
-	public function validaUsuario()
+	public function acessoUsuario()
 	{
 		if (isset($_POST['logarUsuario']))
 		{
@@ -43,6 +43,28 @@ class ControllerUsuario extends AbstractController
 				exit;
 			}
 		}
+	}
+	
+	public function securityAluno()
+	{
+		// Instancia a classe
+		$userClass = new Usuario();
+		
+		// Verifica se não há um usuário logado
+		if ($userClass->usuarioLogado(false) === false)
+		{
+			// Não há um usuário logado, redireciona pra tela de login
+			header("Location: index.php");
+			exit;
+		}
+	}
+	
+	public function sairSistema()
+	{
+		$userClass = new Usuario();
+		
+		if ($userClass->logout())
+			header("Location: /senigma/view/inicio/index.php?page=loginUsuario");
 	}
 }
 ?>

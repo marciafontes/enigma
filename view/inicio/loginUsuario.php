@@ -3,7 +3,7 @@ include_once '../../helpers/Import.php';
 Import::controller('ControllerUsuario');
 
 $controllerUsuario = new ControllerUsuario();
-$controllerUsuario->validaUsuario();
+$controllerUsuario->acessoUsuario();
 ?>
 <div class="wrapper">
 		<div class="content">

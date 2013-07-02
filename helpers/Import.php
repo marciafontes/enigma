@@ -16,6 +16,11 @@ class Import
 		self::includeFile('template/' . $file . '.php');
 	}
 	
+	public static function config()
+	{
+		self::includeFile('../config/config.php');
+	}
+	
 	public static function view($file)
 	{
 		self::includeFile('../view/' . $file . '.php');
@@ -24,5 +29,20 @@ class Import
 	public static function controller($file)
 	{
 		self::includeFile('../controller/' . $file . '.php');
+	}
+	
+	public static function action($file)
+	{
+		self::includeFile('../model/action/' . $file . '.php');
+	}
+	
+	public static function bean($file)
+	{
+		self::includeFile('../model/bean/' . $file . '.php');
+	}
+	
+	public static function dao($file)
+	{
+		self::includeFile('../model/dao/' . $file . '.php');
 	}
 }

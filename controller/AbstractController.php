@@ -1,8 +1,8 @@
 <?php
 abstract class AbstractController
 {
-	private $action;
+	protected $action;
 	
-	abstract function getAction();
+	abstract protected function getAction();
 }
 ?>

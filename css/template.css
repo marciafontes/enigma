@@ -1,10 +1,10 @@
 body{
 
-	background-image:url(../layout/bg.png);
-	width: 850px;
+	background:#3f5986 url(../layout/bg.png) repeat-x top center;
+	width: 960px;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 40px;
+	margin-top: 20px;
 }
 
 
@@ -14,12 +14,12 @@ body{
 
 #topo{
 
-	background-image:url(../images/enigma.jpg);
+	background-image:url(../layout/enigma.png);
 	background-repeat: no-repeat;
 	margin-left: auto;
 	margin-right: auto;
 	width: 500px;
-	height: 150px;
+	height: 170px;
 	/*border-style: solid;
 	border-width:3px;
 	border-color:#1E90FF;*/

@@ -3,11 +3,8 @@
 class Usuario {
 	// Nome do banco de dados onde está a tabela de usuários
 	var $bancoDeDados = 'quiz';
-	
-	
 	// Nome da tabela de usuários
 	var $tabelaUsuarios = 'usuarios';
-	
 	/**
 	 * Nomes dos campos onde ficam o usuário, a senha e o e-mail de cada usuário
 	 * Formato: tipo => nome do campo na tabela
@@ -221,7 +218,7 @@ class Usuario {
 			// Verifica os dados salvos nos cookies?
 			if ($cookies) {
 				// Se os dados forem válidos o usuário é logado automaticamente
-				return $this->verificaDadosLembrados();
+				//return $this->verificaDadosLembrados();
 			} else {
 				// Não há usuário logado
 				$this->erro = 'Não há usuário logado';
@@ -359,6 +356,7 @@ class Usuario {
 			unset($_COOKIE[$this->prefixoChaves . 'ls']);			
 		}
 	}
+	
 }
 
 ?>
