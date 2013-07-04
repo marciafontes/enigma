@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.1
+-- version 3.4.5
 -- http://www.phpmyadmin.net
 --
--- Servidor: localhost
--- Tempo de Geração: 
--- Versão do Servidor: 5.5.24-log
--- Versão do PHP: 5.4.3
+-- Servidor: 127.0.0.1
+-- Tempo de Geração: 04/07/2013 às 22h53min
+-- Versão do Servidor: 5.5.16
+-- Versão do PHP: 5.3.8
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -61,6 +61,79 @@ CREATE TABLE IF NOT EXISTS `log` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `ngm_assunto`
+--
+
+CREATE TABLE IF NOT EXISTS `ngm_assunto` (
+  `id_assunto` bigint(20) NOT NULL AUTO_INCREMENT,
+  `ngm_rodada_ngm_jogo_id_jogo` bigint(20) NOT NULL,
+  `ngm_rodada_id_rodada` bigint(20) NOT NULL,
+  PRIMARY KEY (`id_assunto`),
+  KEY `ngm_rodada_ngm_jogo_id_jogo` (`ngm_rodada_ngm_jogo_id_jogo`),
+  KEY `ngm_rodada_id_rodada` (`ngm_rodada_id_rodada`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `ngm_jogo`
+--
+
+CREATE TABLE IF NOT EXISTS `ngm_jogo` (
+  `id_jogo` bigint(20) NOT NULL AUTO_INCREMENT,
+  `jogo` varchar(45) NOT NULL,
+  `descricao` text NOT NULL,
+  `nrodada` int(11) NOT NULL,
+  `metajogo` int(11) NOT NULL,
+  `premiofinal` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id_jogo`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Extraindo dados da tabela `ngm_jogo`
+--
+
+INSERT INTO `ngm_jogo` (`id_jogo`, `jogo`, `descricao`, `nrodada`, `metajogo`, `premiofinal`) VALUES
+(1, 'Jogo para o NPI', 'Este jogo foi feito para os alunos do NPI e todos os afins que queriam participar do jogo.', 10, 100, 'codigofonte de um programa ou informal;oes sovre tal coisa');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `ngm_rodada`
+--
+
+CREATE TABLE IF NOT EXISTS `ngm_rodada` (
+  `id_rodada` bigint(20) NOT NULL AUTO_INCREMENT,
+  `ngm_jogo_id_jogo` bigint(20) NOT NULL,
+  `nomerodada` varchar(20) NOT NULL,
+  `nperguntas` int(11) NOT NULL,
+  `metadarodada` int(11) NOT NULL,
+  `jogoid` bigint(20) NOT NULL,
+  `introducao` varchar(45) NOT NULL,
+  `premiorodada` varchar(255) NOT NULL,
+  PRIMARY KEY (`id_rodada`),
+  KEY `ngm_jogo_id_jogo` (`ngm_jogo_id_jogo`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
+
+--
+-- Extraindo dados da tabela `ngm_rodada`
+--
+
+INSERT INTO `ngm_rodada` (`id_rodada`, `ngm_jogo_id_jogo`, `nomerodada`, `nperguntas`, `metadarodada`, `jogoid`, `introducao`, `premiorodada`) VALUES
+(11, 1, 'rodada matematica', 6, 70, 1, 'Introdução da rodada ', 'código rodada do prêmio'),
+(12, 1, 'rodada portugues', 6, 70, 1, 'Introdução da rodada ', 'código rodada do prêmio'),
+(13, 1, 'rodada geografia', 6, 70, 1, 'Introdução da rodada ', 'código rodada do prêmio'),
+(14, 1, 'rodada fisica', 6, 70, 1, 'Introdução da rodada ', 'código rodada do prêmio'),
+(15, 1, 'rodada quimica', 6, 70, 1, 'Introdução da rodada ', 'código rodada do prêmio'),
+(16, 1, 'rodada biologia', 6, 70, 1, 'Introdução da rodada ', 'código rodada do prêmio'),
+(17, 1, 'rodada filosofia', 6, 70, 1, 'Introdução da rodada ', 'código rodada do prêmio'),
+(18, 1, 'rodada redacao', 6, 70, 1, 'Introdução da rodada ', 'código rodada do prêmio'),
+(19, 1, 'rodada sociologia', 6, 70, 1, 'Introdução da rodada ', 'código rodada do prêmio'),
+(20, 1, 'rodada ciências', 6, 70, 1, 'Introdução da rodada ', 'código rodada do prêmio');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `pergunta`
 --
 
@@ -109,7 +182,14 @@ CREATE TABLE IF NOT EXISTS `pontuacao` (
   `idassunto` int(11) NOT NULL,
   `pontuacao` int(11) NOT NULL,
   PRIMARY KEY (`idponto`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Extraindo dados da tabela `pontuacao`
+--
+
+INSERT INTO `pontuacao` (`idponto`, `id_user`, `idassunto`, `pontuacao`) VALUES
+(3, 1, 1, 50);
 
 -- --------------------------------------------------------
 
@@ -125,7 +205,42 @@ CREATE TABLE IF NOT EXISTS `resposta` (
   `data` datetime NOT NULL,
   `nota` int(10) NOT NULL,
   PRIMARY KEY (`id_resposta`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=339 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=368 ;
+
+--
+-- Extraindo dados da tabela `resposta`
+--
+
+INSERT INTO `resposta` (`id_resposta`, `id_user`, `id_pergunta`, `op_escolhida`, `data`, `nota`) VALUES
+(339, 1, 0, '1', '2013-06-20 17:35:59', 10),
+(340, 1, 1, '1', '2013-06-20 23:49:55', 0),
+(341, 1, 0, '4', '2013-06-25 16:53:37', 0),
+(342, 1, 1, '4', '2013-06-25 16:53:45', 0),
+(343, 1, 0, '1', '2013-06-25 16:53:57', 10),
+(344, 1, 1, '4', '2013-06-25 16:54:01', 10),
+(345, 1, 0, '4', '2013-06-25 17:02:33', 0),
+(346, 1, 1, '4', '2013-06-25 17:03:31', 0),
+(347, 1, 2, '4', '2013-06-25 17:03:34', 0),
+(348, 1, 3, '4', '2013-06-25 17:03:38', 0),
+(349, 1, 0, '4', '2013-06-25 17:03:42', 0),
+(350, 1, 1, '4', '2013-06-25 17:05:36', 0),
+(351, 1, 2, '1', '2013-06-25 17:05:39', 0),
+(352, 1, 3, '2', '2013-06-25 17:05:42', 0),
+(353, 1, 0, '1', '2013-06-25 17:06:10', 0),
+(354, 1, 1, '5', '2013-06-25 17:06:15', 0),
+(355, 1, 2, '4', '2013-06-25 17:06:19', 0),
+(356, 1, 3, '5', '2013-06-25 17:06:23', 0),
+(357, 1, 0, '4', '2013-06-25 17:37:51', 0),
+(358, 1, 1, '4', '2013-06-25 17:37:52', 0),
+(359, 1, 0, '1', '2013-07-02 18:02:05', 10),
+(360, 1, 1, '3', '2013-07-02 18:02:07', 0),
+(361, 1, 0, '3', '2013-07-02 18:11:47', 0),
+(362, 1, 1, '1', '2013-07-02 18:11:50', 0),
+(363, 1, 0, '3', '2013-07-04 16:28:17', 0),
+(364, 1, 1, '4', '2013-07-04 16:28:24', 10),
+(365, 1, 0, '3', '2013-07-04 16:32:23', 0),
+(366, 1, 1, '3', '2013-07-04 16:32:24', 0),
+(367, 1, 0, '3', '2013-07-04 16:32:25', 0);
 
 -- --------------------------------------------------------
 
@@ -152,11 +267,24 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `usuario`, `email`, `senha`, `sexo`, `datanasc`, `serieescolar`, `areainteresse`, `type`) VALUES
-(1, 'SUANE SANTOS', 'suane', 'suane.ssantos@gmail.com', '1234', 'F', '1990-10-15', 'Graduação', 'Programação', '3');
+(1, 'SUANE SANTOS', 'iuri', 'suane.ssantos@gmail.com', '1234', 'F', '1990-10-15', 'Graduação', 'Programação', '3');
 
 --
 -- Restrições para as tabelas dumpadas
 --
+
+--
+-- Restrições para a tabela `ngm_assunto`
+--
+ALTER TABLE `ngm_assunto`
+  ADD CONSTRAINT `ngm_assunto_ibfk_2` FOREIGN KEY (`ngm_rodada_ngm_jogo_id_jogo`) REFERENCES `ngm_rodada` (`ngm_jogo_id_jogo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `ngm_assunto_ibfk_1` FOREIGN KEY (`ngm_rodada_id_rodada`) REFERENCES `ngm_rodada` (`id_rodada`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Restrições para a tabela `ngm_rodada`
+--
+ALTER TABLE `ngm_rodada`
+  ADD CONSTRAINT `ngm_rodada_ibfk_1` FOREIGN KEY (`ngm_jogo_id_jogo`) REFERENCES `ngm_jogo` (`id_jogo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Restrições para a tabela `pergunta`

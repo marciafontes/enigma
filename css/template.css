@@ -120,3 +120,66 @@ body{
 	padding:4px;
 	text-align:center;
 }
+
+#alertBox,#informBox,#successBox,#failBox
+{
+	background:no-repeat 10px center;
+	margin:0 auto;
+	padding:20px;
+	padding-left:80px;
+	width:400px;
+	text-align:justify;
+	line-height:1.5em;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+}
+
+#alertBox
+{
+	background-color:#fff6b8;
+	background-image: url("../images/atention.png"); 
+	border: 1px solid #fc9; 
+	color:#5e5200;
+}
+
+#informBox
+{
+	background-color:#d3e7fc; 
+	background-image: url("../images/inform.png"); 
+	border: 1px solid #8b9fb3; 
+	color:#154c81;
+}
+
+#successBox
+{
+	background-color:#ddfdc6; 
+	background-image: url("../images/success.png");
+	border: 1px solid #85bc5b; 
+	color:#294e0f;
+}
+
+#failBox{
+	background-color:#ffdcdc; 
+	background-image: url("../images/fail.png"); 
+	border: 1px solid #cd8686; 
+	color:#733434;
+}
+
+#alertBox a
+{
+	color:#5e5200;
+}
+
+#informBox a
+{
+	color:#154c81;
+}
+#successBox a
+{
+	color:#294e0f;
+}
+#failBox a
+{
+	color:#733434;
+}

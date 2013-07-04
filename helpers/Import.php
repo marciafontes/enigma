@@ -21,6 +21,11 @@ class Import
 		self::includeFile('../config/config.php');
 	}
 	
+	public static function helpers($file)
+	{
+		self::includeFile('../helpers/' . $file . '.php');
+	}
+	
 	public static function view($file)
 	{
 		self::includeFile('../view/' . $file . '.php');
