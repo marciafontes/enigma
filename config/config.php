@@ -6,6 +6,5 @@ class Config
 	const DB_NAME = 'quiz';
 	const DB_USER = 'root';
 	const DB_PASS = '';
-	
 }
 ?>

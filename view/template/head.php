@@ -1,16 +1,13 @@
 <title>::..SISTEMA ENIGMA..::</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
-<link rel="stylesheet" type="text/css" href="../../css/style.css" />
 
-<script src="js/jv-1.js" type="text/javascript"></script>
-<script src="js/jv-2.font.js" type="text/javascript"></script>
-	<link rel="stylesheet" type="text/css" href="../../css/template.css" />
-	<link rel="stylesheet" type="text/css" href="../../css/default.css" />
-	<link rel="stylesheet" type="text/css" href="../../css/component.css" />
-	<script src="../../js/modern.custom.js"></script>
-<script type="text/javascript">
-	Cufon.replace('h1',{ textShadow: '1px 1px #fff'});
-	Cufon.replace('h2',{ textShadow: '1px 1px #fff'});
-	Cufon.replace('h3',{ textShadow: '1px 1px #000'});
-	Cufon.replace('.back');
-</script>
+<script type="text/javascript" src="../template/js/jv-1.js"></script>
+<!-- <script type="text/javascript" src="../template/js/jv-2.font.js"></script> -->
+<script type="text/javascript" src="../template/js/modern.custom.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="../template/js/mainLoginForm.js"></script>
+
+<link rel="stylesheet" type="text/css" href="../template/css/style.css" />
+<link rel="stylesheet" type="text/css" href="../template/css/template.css" />
+<link rel="stylesheet" type="text/css" href="../template/css/default.css" />
+<link rel="stylesheet" type="text/css" href="../template/css/component.css" />

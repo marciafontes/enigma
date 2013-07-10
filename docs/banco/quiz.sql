@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tempo de Geração: 04/07/2013 às 22h53min
+-- Tempo de Geração: 10/07/2013 às 22h37min
 -- Versão do Servidor: 5.5.16
 -- Versão do PHP: 5.3.8
 
@@ -68,10 +68,30 @@ CREATE TABLE IF NOT EXISTS `ngm_assunto` (
   `id_assunto` bigint(20) NOT NULL AUTO_INCREMENT,
   `ngm_rodada_ngm_jogo_id_jogo` bigint(20) NOT NULL,
   `ngm_rodada_id_rodada` bigint(20) NOT NULL,
+  `nome` varchar(255) NOT NULL,
+  `descricao` text NOT NULL,
   PRIMARY KEY (`id_assunto`),
   KEY `ngm_rodada_ngm_jogo_id_jogo` (`ngm_rodada_ngm_jogo_id_jogo`),
   KEY `ngm_rodada_id_rodada` (`ngm_rodada_id_rodada`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+
+--
+-- Extraindo dados da tabela `ngm_assunto`
+--
+
+INSERT INTO `ngm_assunto` (`id_assunto`, `ngm_rodada_ngm_jogo_id_jogo`, `ngm_rodada_id_rodada`, `nome`, `descricao`) VALUES
+(1, 1, 1, 'Assunto 1', 'Descrição completa do assunto Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt magna in odio egestas rhoncus. Duis fermentum blandit nulla. Nullam justo felis, dapibus imperdiet eros sit amet, tempus laoreet massa. Aenean sit amet lobortis urna. Quisque aliquet pulvinar ante, dapibus convallis enim venenatis tincidunt. Sed congue felis in sagittis tincidunt. Mauris bibendum ligula scelerisque, fermentum sem nec, euismod nisi. Nulla vulputate eget mauris sed tempus. Nulla eu fermentum nisl, posuere vestibulum metus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'),
+(2, 1, 1, 'Assunto 2', 'Descrição completa do assunto Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt magna in odio egestas rhoncus. Duis fermentum blandit nulla. Nullam justo felis, dapibus imperdiet eros sit amet, tempus laoreet massa. Aenean sit amet lobortis urna. Quisque aliquet pulvinar ante, dapibus convallis enim venenatis tincidunt. Sed congue felis in sagittis tincidunt. Mauris bibendum ligula scelerisque, fermentum sem nec, euismod nisi. Nulla vulputate eget mauris sed tempus. Nulla eu fermentum nisl, posuere vestibulum metus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'),
+(3, 1, 1, 'Assunto 3', 'Descrição completa do assunto Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt magna in odio egestas rhoncus. Duis fermentum blandit nulla. Nullam justo felis, dapibus imperdiet eros sit amet, tempus laoreet massa. Aenean sit amet lobortis urna. Quisque aliquet pulvinar ante, dapibus convallis enim venenatis tincidunt. Sed congue felis in sagittis tincidunt. Mauris bibendum ligula scelerisque, fermentum sem nec, euismod nisi. Nulla vulputate eget mauris sed tempus. Nulla eu fermentum nisl, posuere vestibulum metus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'),
+(4, 1, 2, 'Assunto 4', 'Descrição completa do assunto Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt magna in odio egestas rhoncus. Duis fermentum blandit nulla. Nullam justo felis, dapibus imperdiet eros sit amet, tempus laoreet massa. Aenean sit amet lobortis urna. Quisque aliquet pulvinar ante, dapibus convallis enim venenatis tincidunt. Sed congue felis in sagittis tincidunt. Mauris bibendum ligula scelerisque, fermentum sem nec, euismod nisi. Nulla vulputate eget mauris sed tempus. Nulla eu fermentum nisl, posuere vestibulum metus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'),
+(5, 1, 2, 'Assunto 5', 'Descrição completa do assunto Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt magna in odio egestas rhoncus. Duis fermentum blandit nulla. Nullam justo felis, dapibus imperdiet eros sit amet, tempus laoreet massa. Aenean sit amet lobortis urna. Quisque aliquet pulvinar ante, dapibus convallis enim venenatis tincidunt. Sed congue felis in sagittis tincidunt. Mauris bibendum ligula scelerisque, fermentum sem nec, euismod nisi. Nulla vulputate eget mauris sed tempus. Nulla eu fermentum nisl, posuere vestibulum metus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'),
+(6, 1, 3, 'Assunto 6', 'Descrição completa do assunto Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt magna in odio egestas rhoncus. Duis fermentum blandit nulla. Nullam justo felis, dapibus imperdiet eros sit amet, tempus laoreet massa. Aenean sit amet lobortis urna. Quisque aliquet pulvinar ante, dapibus convallis enim venenatis tincidunt. Sed congue felis in sagittis tincidunt. Mauris bibendum ligula scelerisque, fermentum sem nec, euismod nisi. Nulla vulputate eget mauris sed tempus. Nulla eu fermentum nisl, posuere vestibulum metus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'),
+(7, 1, 3, 'Assunto 7', 'Descrição completa do assunto Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt magna in odio egestas rhoncus. Duis fermentum blandit nulla. Nullam justo felis, dapibus imperdiet eros sit amet, tempus laoreet massa. Aenean sit amet lobortis urna. Quisque aliquet pulvinar ante, dapibus convallis enim venenatis tincidunt. Sed congue felis in sagittis tincidunt. Mauris bibendum ligula scelerisque, fermentum sem nec, euismod nisi. Nulla vulputate eget mauris sed tempus. Nulla eu fermentum nisl, posuere vestibulum metus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'),
+(8, 1, 4, 'Assunto 8', 'Descrição completa do assunto Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt magna in odio egestas rhoncus. Duis fermentum blandit nulla. Nullam justo felis, dapibus imperdiet eros sit amet, tempus laoreet massa. Aenean sit amet lobortis urna. Quisque aliquet pulvinar ante, dapibus convallis enim venenatis tincidunt. Sed congue felis in sagittis tincidunt. Mauris bibendum ligula scelerisque, fermentum sem nec, euismod nisi. Nulla vulputate eget mauris sed tempus. Nulla eu fermentum nisl, posuere vestibulum metus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'),
+(9, 1, 4, 'Assunto 9', 'Descrição completa do assunto Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt magna in odio egestas rhoncus. Duis fermentum blandit nulla. Nullam justo felis, dapibus imperdiet eros sit amet, tempus laoreet massa. Aenean sit amet lobortis urna. Quisque aliquet pulvinar ante, dapibus convallis enim venenatis tincidunt. Sed congue felis in sagittis tincidunt. Mauris bibendum ligula scelerisque, fermentum sem nec, euismod nisi. Nulla vulputate eget mauris sed tempus. Nulla eu fermentum nisl, posuere vestibulum metus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'),
+(10, 1, 5, 'Assunto 10', 'Descrição completa do assunto Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt magna in odio egestas rhoncus. Duis fermentum blandit nulla. Nullam justo felis, dapibus imperdiet eros sit amet, tempus laoreet massa. Aenean sit amet lobortis urna. Quisque aliquet pulvinar ante, dapibus convallis enim venenatis tincidunt. Sed congue felis in sagittis tincidunt. Mauris bibendum ligula scelerisque, fermentum sem nec, euismod nisi. Nulla vulputate eget mauris sed tempus. Nulla eu fermentum nisl, posuere vestibulum metus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'),
+(11, 1, 5, 'Assunto 11', 'Descrição completa do assunto Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt magna in odio egestas rhoncus. Duis fermentum blandit nulla. Nullam justo felis, dapibus imperdiet eros sit amet, tempus laoreet massa. Aenean sit amet lobortis urna. Quisque aliquet pulvinar ante, dapibus convallis enim venenatis tincidunt. Sed congue felis in sagittis tincidunt. Mauris bibendum ligula scelerisque, fermentum sem nec, euismod nisi. Nulla vulputate eget mauris sed tempus. Nulla eu fermentum nisl, posuere vestibulum metus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'),
+(12, 1, 6, 'Assunto 12', 'Descrição completa do assunto Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt magna in odio egestas rhoncus. Duis fermentum blandit nulla. Nullam justo felis, dapibus imperdiet eros sit amet, tempus laoreet massa. Aenean sit amet lobortis urna. Quisque aliquet pulvinar ante, dapibus convallis enim venenatis tincidunt. Sed congue felis in sagittis tincidunt. Mauris bibendum ligula scelerisque, fermentum sem nec, euismod nisi. Nulla vulputate eget mauris sed tempus. Nulla eu fermentum nisl, posuere vestibulum metus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.');
 
 -- --------------------------------------------------------
 
@@ -94,7 +114,260 @@ CREATE TABLE IF NOT EXISTS `ngm_jogo` (
 --
 
 INSERT INTO `ngm_jogo` (`id_jogo`, `jogo`, `descricao`, `nrodada`, `metajogo`, `premiofinal`) VALUES
-(1, 'Jogo para o NPI', 'Este jogo foi feito para os alunos do NPI e todos os afins que queriam participar do jogo.', 10, 100, 'codigofonte de um programa ou informal;oes sovre tal coisa');
+(1, 'Jogo para o NPI', 'Este jogo foi feito para todos os alunos do NPI e afins', 10, 100, 'codigo fonte de um programa ou informações sovre tal coisa');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `ngm_pergunta`
+--
+
+CREATE TABLE IF NOT EXISTS `ngm_pergunta` (
+  `id_pergunta` bigint(20) NOT NULL AUTO_INCREMENT,
+  `ngm_assunto_id_assunto` bigint(20) NOT NULL,
+  `comandoPergunta` text NOT NULL,
+  PRIMARY KEY (`id_pergunta`),
+  KEY `ngm_assunto_id_assunto` (`ngm_assunto_id_assunto`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=36 ;
+
+--
+-- Extraindo dados da tabela `ngm_pergunta`
+--
+
+INSERT INTO `ngm_pergunta` (`id_pergunta`, `ngm_assunto_id_assunto`, `comandoPergunta`) VALUES
+(1, 1, 'pergunta 1?'),
+(2, 1, 'pergunta 2?'),
+(3, 1, 'pergunta 3?'),
+(4, 1, 'pergunta 4?'),
+(5, 1, 'pergunta 5?'),
+(6, 1, 'pergunta 6?'),
+(7, 2, 'pergunta 7?'),
+(8, 2, 'pergunta 8?'),
+(9, 2, 'pergunta 9?'),
+(10, 2, 'pergunta 10?'),
+(11, 2, 'pergunta 11?'),
+(12, 3, 'pergunta 12?'),
+(13, 3, 'pergunta 13?'),
+(14, 3, 'pergunta 14?'),
+(15, 3, 'pergunta 15?'),
+(16, 3, 'pergunta 16?'),
+(17, 4, 'pergunta 17?'),
+(18, 4, 'pergunta 18?'),
+(19, 4, 'pergunta 19?'),
+(20, 4, 'pergunta 20?'),
+(21, 4, 'pergunta 21?'),
+(22, 5, 'pergunta 22?'),
+(23, 5, 'pergunta 23?'),
+(24, 5, 'pergunta 24?'),
+(25, 5, 'pergunta 25?'),
+(26, 5, 'pergunta 26?'),
+(27, 6, 'pergunta 27?'),
+(28, 6, 'pergunta 28?'),
+(29, 6, 'pergunta 29?'),
+(30, 6, 'pergunta 30?'),
+(31, 6, 'pergunta 31?'),
+(32, 7, 'pergunta 32?'),
+(33, 7, 'pergunta 33?'),
+(34, 7, 'pergunta 34?'),
+(35, 7, 'pergunta 35?');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `ngm_resposta`
+--
+
+CREATE TABLE IF NOT EXISTS `ngm_resposta` (
+  `id_resposta` bigint(20) NOT NULL AUTO_INCREMENT,
+  `ngm_pergunta_ngm_assunto_id_assunto` bigint(20) NOT NULL,
+  `ngm_pergunta_id_pergunta` bigint(20) NOT NULL,
+  `descricao` varchar(255) NOT NULL,
+  `correta` int(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id_resposta`),
+  KEY `ngm_pergunta_ngm_assunto_id_assunto` (`ngm_pergunta_ngm_assunto_id_assunto`,`ngm_pergunta_id_pergunta`),
+  KEY `ngm_pergunta_id_pergunta` (`ngm_pergunta_id_pergunta`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=176 ;
+
+--
+-- Extraindo dados da tabela `ngm_resposta`
+--
+
+INSERT INTO `ngm_resposta` (`id_resposta`, `ngm_pergunta_ngm_assunto_id_assunto`, `ngm_pergunta_id_pergunta`, `descricao`, `correta`) VALUES
+(1, 1, 1, 'resposta 1', 1),
+(2, 1, 1, 'resposta 2', 0),
+(3, 1, 1, 'resposta 3', 0),
+(4, 1, 1, 'resposta 4', 0),
+(5, 1, 1, 'resposta 5', 0),
+(6, 1, 2, 'resposta 1', 0),
+(7, 1, 2, 'resposta 2', 1),
+(8, 1, 2, 'resposta 3', 0),
+(9, 1, 2, 'resposta 4', 0),
+(10, 1, 2, 'resposta 5', 0),
+(11, 1, 3, 'resposta 1', 0),
+(12, 1, 3, 'resposta 2', 1),
+(13, 1, 3, 'resposta 3', 0),
+(14, 1, 3, 'resposta 4', 0),
+(15, 1, 3, 'resposta 5', 0),
+(16, 1, 4, 'resposta 1', 0),
+(17, 1, 4, 'resposta 2', 1),
+(18, 1, 4, 'resposta 3', 0),
+(19, 1, 4, 'resposta 4', 0),
+(20, 1, 4, 'resposta 5', 0),
+(21, 1, 5, 'resposta 1', 0),
+(22, 1, 5, 'resposta 2', 0),
+(23, 1, 5, 'resposta 3', 1),
+(24, 1, 5, 'resposta 4', 0),
+(25, 1, 5, 'resposta 5', 0),
+(26, 1, 6, 'resposta 1', 0),
+(27, 1, 6, 'resposta 2', 0),
+(28, 1, 6, 'resposta 3', 1),
+(29, 1, 6, 'resposta 4', 0),
+(30, 1, 6, 'resposta 5', 0),
+(31, 2, 7, 'resposta 1', 0),
+(32, 2, 7, 'resposta 2', 0),
+(33, 2, 7, 'resposta 3', 1),
+(34, 2, 7, 'resposta 4', 0),
+(35, 2, 7, 'resposta 5', 0),
+(36, 2, 8, 'resposta 1', 0),
+(37, 2, 8, 'resposta 2', 0),
+(38, 2, 8, 'resposta 3', 0),
+(39, 2, 8, 'resposta 4', 0),
+(40, 2, 8, 'resposta 5', 1),
+(41, 2, 9, 'resposta 1', 1),
+(42, 2, 9, 'resposta 2', 0),
+(43, 2, 9, 'resposta 3', 0),
+(44, 2, 9, 'resposta 4', 0),
+(45, 2, 9, 'resposta 5', 0),
+(46, 2, 10, 'resposta 1', 0),
+(47, 2, 10, 'resposta 2', 0),
+(48, 2, 10, 'resposta 3', 0),
+(49, 2, 10, 'resposta 4', 0),
+(50, 2, 10, 'resposta 5', 1),
+(51, 2, 11, 'resposta 1', 0),
+(52, 2, 11, 'resposta 2', 0),
+(53, 2, 11, 'resposta 3', 1),
+(54, 2, 11, 'resposta 4', 0),
+(55, 2, 11, 'resposta 5', 0),
+(56, 3, 12, 'resposta 1', 0),
+(57, 3, 12, 'resposta 2', 1),
+(58, 3, 12, 'resposta 3', 0),
+(59, 3, 12, 'resposta 4', 0),
+(60, 3, 12, 'resposta 5', 0),
+(61, 3, 13, 'resposta 1', 0),
+(62, 3, 13, 'resposta 2', 1),
+(63, 3, 13, 'resposta 3', 0),
+(64, 3, 13, 'resposta 4', 0),
+(65, 3, 13, 'resposta 5', 0),
+(66, 3, 14, 'resposta 1', 0),
+(67, 3, 14, 'resposta 2', 1),
+(68, 3, 14, 'resposta 3', 0),
+(69, 3, 14, 'resposta 4', 0),
+(70, 3, 14, 'resposta 5', 0),
+(71, 3, 15, 'resposta 1', 0),
+(72, 3, 15, 'resposta 2', 1),
+(73, 3, 15, 'resposta 3', 0),
+(74, 3, 15, 'resposta 4', 0),
+(75, 3, 15, 'resposta 5', 0),
+(76, 3, 16, 'resposta 1', 0),
+(77, 3, 16, 'resposta 2', 1),
+(78, 3, 16, 'resposta 3', 0),
+(79, 3, 16, 'resposta 4', 0),
+(80, 3, 16, 'resposta 5', 0),
+(81, 4, 17, 'resposta 1', 0),
+(82, 4, 17, 'resposta 2', 1),
+(83, 4, 17, 'resposta 3', 0),
+(84, 4, 17, 'resposta 4', 0),
+(85, 4, 17, 'resposta 5', 0),
+(86, 4, 18, 'resposta 1', 0),
+(87, 4, 18, 'resposta 2', 1),
+(88, 4, 18, 'resposta 3', 0),
+(89, 4, 18, 'resposta 4', 0),
+(90, 4, 18, 'resposta 5', 0),
+(91, 4, 19, 'resposta 1', 0),
+(92, 4, 19, 'resposta 2', 1),
+(93, 4, 19, 'resposta 3', 0),
+(94, 4, 19, 'resposta 4', 0),
+(95, 4, 19, 'resposta 5', 0),
+(96, 4, 20, 'resposta 1', 0),
+(97, 4, 20, 'resposta 2', 1),
+(98, 4, 20, 'resposta 3', 0),
+(99, 4, 20, 'resposta 4', 0),
+(100, 4, 20, 'resposta 5', 0),
+(101, 4, 21, 'resposta 1', 0),
+(102, 4, 21, 'resposta 2', 1),
+(103, 4, 21, 'resposta 3', 0),
+(104, 4, 21, 'resposta 4', 0),
+(105, 4, 21, 'resposta 5', 0),
+(106, 5, 22, 'resposta 1', 0),
+(107, 5, 22, 'resposta 2', 1),
+(108, 5, 22, 'resposta 3', 0),
+(109, 5, 22, 'resposta 4', 0),
+(110, 5, 22, 'resposta 5', 0),
+(111, 5, 23, 'resposta 1', 0),
+(112, 5, 23, 'resposta 2', 1),
+(113, 5, 23, 'resposta 3', 0),
+(114, 5, 23, 'resposta 4', 0),
+(115, 5, 23, 'resposta 5', 0),
+(116, 5, 24, 'resposta 1', 0),
+(117, 5, 24, 'resposta 2', 1),
+(118, 5, 24, 'resposta 3', 0),
+(119, 5, 24, 'resposta 4', 0),
+(120, 5, 24, 'resposta 5', 0),
+(121, 5, 25, 'resposta 1', 0),
+(122, 5, 25, 'resposta 2', 1),
+(123, 5, 25, 'resposta 3', 0),
+(124, 5, 25, 'resposta 4', 0),
+(125, 5, 25, 'resposta 5', 0),
+(126, 5, 26, 'resposta 1', 0),
+(127, 5, 26, 'resposta 2', 1),
+(128, 5, 26, 'resposta 3', 0),
+(129, 5, 26, 'resposta 4', 0),
+(130, 5, 26, 'resposta 5', 0),
+(131, 6, 27, 'resposta 1', 0),
+(132, 6, 27, 'resposta 2', 1),
+(133, 6, 27, 'resposta 3', 0),
+(134, 6, 27, 'resposta 4', 0),
+(135, 6, 27, 'resposta 5', 0),
+(136, 6, 28, 'resposta 1', 0),
+(137, 6, 28, 'resposta 2', 1),
+(138, 6, 28, 'resposta 3', 0),
+(139, 6, 28, 'resposta 4', 0),
+(140, 6, 28, 'resposta 5', 0),
+(141, 6, 29, 'resposta 1', 0),
+(142, 6, 29, 'resposta 2', 1),
+(143, 6, 29, 'resposta 3', 0),
+(144, 6, 29, 'resposta 4', 0),
+(145, 6, 29, 'resposta 5', 0),
+(146, 6, 30, 'resposta 1', 0),
+(147, 6, 30, 'resposta 2', 1),
+(148, 6, 30, 'resposta 3', 0),
+(149, 6, 30, 'resposta 4', 0),
+(150, 6, 30, 'resposta 5', 0),
+(151, 6, 31, 'resposta 1', 0),
+(152, 6, 31, 'resposta 2', 1),
+(153, 6, 31, 'resposta 3', 0),
+(154, 6, 31, 'resposta 4', 0),
+(155, 6, 31, 'resposta 5', 0),
+(156, 7, 32, 'resposta 1', 0),
+(157, 7, 32, 'resposta 2', 1),
+(158, 7, 32, 'resposta 3', 0),
+(159, 7, 32, 'resposta 4', 0),
+(160, 7, 32, 'resposta 5', 0),
+(161, 7, 33, 'resposta 1', 0),
+(162, 7, 33, 'resposta 2', 1),
+(163, 7, 33, 'resposta 3', 0),
+(164, 7, 33, 'resposta 4', 0),
+(165, 7, 33, 'resposta 5', 0),
+(166, 7, 34, 'resposta 1', 0),
+(167, 7, 34, 'resposta 2', 1),
+(168, 7, 34, 'resposta 3', 0),
+(169, 7, 34, 'resposta 4', 0),
+(170, 7, 34, 'resposta 5', 0),
+(171, 7, 35, 'resposta 1', 0),
+(172, 7, 35, 'resposta 2', 1),
+(173, 7, 35, 'resposta 3', 0),
+(174, 7, 35, 'resposta 4', 0),
+(175, 7, 35, 'resposta 5', 0);
 
 -- --------------------------------------------------------
 
@@ -113,23 +386,19 @@ CREATE TABLE IF NOT EXISTS `ngm_rodada` (
   `premiorodada` varchar(255) NOT NULL,
   PRIMARY KEY (`id_rodada`),
   KEY `ngm_jogo_id_jogo` (`ngm_jogo_id_jogo`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Extraindo dados da tabela `ngm_rodada`
 --
 
 INSERT INTO `ngm_rodada` (`id_rodada`, `ngm_jogo_id_jogo`, `nomerodada`, `nperguntas`, `metadarodada`, `jogoid`, `introducao`, `premiorodada`) VALUES
-(11, 1, 'rodada matematica', 6, 70, 1, 'Introdução da rodada ', 'código rodada do prêmio'),
-(12, 1, 'rodada portugues', 6, 70, 1, 'Introdução da rodada ', 'código rodada do prêmio'),
-(13, 1, 'rodada geografia', 6, 70, 1, 'Introdução da rodada ', 'código rodada do prêmio'),
-(14, 1, 'rodada fisica', 6, 70, 1, 'Introdução da rodada ', 'código rodada do prêmio'),
-(15, 1, 'rodada quimica', 6, 70, 1, 'Introdução da rodada ', 'código rodada do prêmio'),
-(16, 1, 'rodada biologia', 6, 70, 1, 'Introdução da rodada ', 'código rodada do prêmio'),
-(17, 1, 'rodada filosofia', 6, 70, 1, 'Introdução da rodada ', 'código rodada do prêmio'),
-(18, 1, 'rodada redacao', 6, 70, 1, 'Introdução da rodada ', 'código rodada do prêmio'),
-(19, 1, 'rodada sociologia', 6, 70, 1, 'Introdução da rodada ', 'código rodada do prêmio'),
-(20, 1, 'rodada ciências', 6, 70, 1, 'Introdução da rodada ', 'código rodada do prêmio');
+(1, 1, 'rodada matemática', 6, 70, 1, 'Introdução da rodada ', 'código rodada do prêmio'),
+(2, 1, 'rodada português', 6, 70, 1, 'Introdução da rodada ', 'código rodada do prêmio'),
+(3, 1, 'rodada história', 6, 70, 1, 'Introdução da rodada ', 'código rodada do prêmio'),
+(4, 1, 'rodada fisica', 6, 70, 1, 'Introdução da rodada ', 'código rodada do prêmio'),
+(5, 1, 'rodada química', 6, 70, 1, 'Introdução da rodada ', 'código rodada do prêmio'),
+(6, 1, 'rodada biologia', 6, 70, 1, 'Introdução da rodada ', 'código rodada do prêmio');
 
 -- --------------------------------------------------------
 
@@ -277,8 +546,21 @@ INSERT INTO `usuarios` (`id`, `nome`, `usuario`, `email`, `senha`, `sexo`, `data
 -- Restrições para a tabela `ngm_assunto`
 --
 ALTER TABLE `ngm_assunto`
-  ADD CONSTRAINT `ngm_assunto_ibfk_2` FOREIGN KEY (`ngm_rodada_ngm_jogo_id_jogo`) REFERENCES `ngm_rodada` (`ngm_jogo_id_jogo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `ngm_assunto_ibfk_1` FOREIGN KEY (`ngm_rodada_id_rodada`) REFERENCES `ngm_rodada` (`id_rodada`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `ngm_assunto_ibfk_1` FOREIGN KEY (`ngm_rodada_id_rodada`) REFERENCES `ngm_rodada` (`id_rodada`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `ngm_assunto_ibfk_2` FOREIGN KEY (`ngm_rodada_ngm_jogo_id_jogo`) REFERENCES `ngm_rodada` (`ngm_jogo_id_jogo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Restrições para a tabela `ngm_pergunta`
+--
+ALTER TABLE `ngm_pergunta`
+  ADD CONSTRAINT `ngm_pergunta_ibfk_1` FOREIGN KEY (`ngm_assunto_id_assunto`) REFERENCES `ngm_assunto` (`id_assunto`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Restrições para a tabela `ngm_resposta`
+--
+ALTER TABLE `ngm_resposta`
+  ADD CONSTRAINT `ngm_resposta_ibfk_3` FOREIGN KEY (`ngm_pergunta_ngm_assunto_id_assunto`) REFERENCES `ngm_pergunta` (`ngm_assunto_id_assunto`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `ngm_resposta_ibfk_4` FOREIGN KEY (`ngm_pergunta_id_pergunta`) REFERENCES `ngm_pergunta` (`id_pergunta`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Restrições para a tabela `ngm_rodada`

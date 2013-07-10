@@ -30,7 +30,7 @@ class ControllerRodada extends AbstractController
 	private function buildIconsRodadas(Rodada $rodada)
 	{
 		echo '<div class="hi-icon-wrap2 hi-icon-effect-2 hi-icon-effect-2">';
-		echo '<a href="index.php?page=exibeJogo&idJogo='.$rodada->getIdJogo().'&idRodada='.$rodada->getId().'" class="hi-icon hi-icon-location" title="Rodada">'.$rodada->getNomeRodada().'</a>';
+		echo '<a href="index.php?page=exibePerguntasRodada&idJogo='.$rodada->getIdJogo().'&idRodada='.$rodada->getId().'" class="hi-icon hi-icon-location" title="Rodada">'.$rodada->getNomeRodada().'</a>';
 		echo '</div>';
 	}
 }

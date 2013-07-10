@@ -19,7 +19,7 @@ if(isset($_SESSION["completed"])){
    // header("location:completo.php"); 
 } 
 
-$id = $_GET["id"];
+$id = $_GET["idRodada"];
 $conn = new dbconn("quiz"); 
 $quiz = new dbrs("SELECT * FROM pergunta INNER JOIN assunto ON assunto.idassunto = pergunta.idassunto WHERE pergunta.idassunto= $id",1);
 //$pergunta = new dbrs("SELECT * FROM assunto WHERE idassunto= '$id'",1);
@@ -101,5 +101,5 @@ if(isset($_GET["a"])){
 
 <?php 
 //Fechando conexão 
-$conn->close(); 
+$conn->close();
 ?> 
