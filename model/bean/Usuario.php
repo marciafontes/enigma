@@ -9,5 +9,7 @@ class Usuario
 	private $sexo;
 	private $dataNasc;
 	private $serieEsc;
+	
+	
 }
 ?>
