@@ -6,9 +6,18 @@ Import::bean('Usuario');
 
 class UsuarioDao extends AbstractDao
 {
-	public function selectAllUsuario()
+	public function selectUsuario(Usuario $usuario)
 	{
-		$this->sql = '';
+		$this->sql = 'SELECT COUNT(*) TotalUsuario 
+						FROM ngm_usuario
+						WHERE usuario=? AND senha=?';
+		
+		$this->prepare();
+		
+		$this->setValue($usuario->getUsuario());
+		$this->setValue($usuario->getSenha());
+		
+		return $this->fetchStmtObject('Usuario');
 	}
 }
 

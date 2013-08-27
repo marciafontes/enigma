@@ -2,8 +2,6 @@
 include_once '../../helpers/Import.php';
 Import::controller('ControllerUsuario');
 
-
-
 $controllerUsuario = new ControllerUsuario();
 $controllerUsuario->acessoUsuario(new Request());
 ?>
@@ -19,7 +17,7 @@ $controllerUsuario->acessoUsuario(new Request());
 								<span class="error">Contem um erro</span>
 							</div>
 							<div>
-								<label>Último Nome:</label>
+								<label>ï¿½ltimo Nome:</label>
 								<input type="text" />
 								<span class="error">Contem um erro</span>
 							</div>
@@ -31,19 +29,19 @@ $controllerUsuario->acessoUsuario(new Request());
 						</div>
 						<div class="column">
 							<div>
-								<label>Nome de Usuário:</label>
+								<label>Nome de Usuï¿½rio:</label>
 								<input type="text"/>
-								<span class="error">Contém um erro</span>
+								<span class="error">Contï¿½m um erro</span>
 							</div>
 							<div>
 								<label>E-mail:</label>
 								<input type="text" />
-								<span class="error">Contém um erro</span>
+								<span class="error">Contï¿½m um erro</span>
 							</div>
 							<div>
 								<label>Senha:</label>
 								<input type="password" />
-								<span class="error">Contém um erro</span>
+								<span class="error">Contï¿½m um erro</span>
 							</div>
 						</div>
 						<div class="bottom">
@@ -52,7 +50,7 @@ $controllerUsuario->acessoUsuario(new Request());
 								<span>Send me updates</span>
 							</div>-->
 							<input type="submit" value="Register" />
-							<a href="index.html" rel="login" class="linkform">Você já possui uma conta? Acesse aqui!</a>
+							<a href="index.html" rel="login" class="linkform">Vocï¿½ jï¿½ possui uma conta? Acesse aqui!</a>
 							<div class="clear"></div>
 						</div>
 					</form>
@@ -71,21 +69,21 @@ $controllerUsuario->acessoUsuario(new Request());
 						<div class="bottom">
 							<div class="remember"><input type="checkbox" /><span>Continuar conectado</span></div>
 							<input type="submit" name="logarUsuario" value="Logar"></input>
-							<a href="register.html" rel="register" class="linkform">Você não tem uma conta ainda? Registre-se aqui!</a>
+							<a href="register.html" rel="register" class="linkform">Vocï¿½ nï¿½o tem uma conta ainda? Registre-se aqui!</a>
 							<div class="clear"></div>
 						</div>
 					</form>
 					<form class="forgot_password">
 						<h3>Esqueceu sua Senha</h3>
 						<div>
-							<label>Usuário ou Email</label>
+							<label>Usuï¿½rio ou Email</label>
 							<input type="text" />
-							<span class="error">Contém um erro</span>
+							<span class="error">Contï¿½m um erro</span>
 						</div>
 						<div class="bottom">
 							<input type="submit" value="Lembrar-me"></input>
 							<a href="index.html" rel="login" class="linkform">Conseguiu lembrar? Logue aqui!</a>
-							<a href="register.html" rel="register" class="linkform">Não tem uma conta ainda? Registre-se aqui!</a>
+							<a href="register.html" rel="register" class="linkform">Nï¿½o tem uma conta ainda? Registre-se aqui!</a>
 							<div class="clear"></div>
 						</div>
 					</form>

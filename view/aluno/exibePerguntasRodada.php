@@ -1,6 +1,7 @@
 <?php
-include_once '../../lib/Import.php';
+include_once '../../helpers/Import.php';
 Import::controller('ControllerRodada');
+Import::controller('ControllerPergunta');
 $controllerPergunta = new ControllerPergunta();
 
 $request = new Request();

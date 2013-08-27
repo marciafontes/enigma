@@ -50,4 +50,9 @@ class Import
 	{
 		self::includeFile('../model/dao/' . $file . '.php');
 	}
+	
+	public static function exception($file)
+	{
+		self::includeFile('../model/exception/' . $file . '.php');
+	}
 }

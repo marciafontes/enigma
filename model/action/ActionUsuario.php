@@ -3,6 +3,9 @@ include_once '../../helpers/Import.php';
 Import::action('AbstractAction');
 Import::dao('UsuarioDao');
 Import::bean('Usuario');
+Import::exception('InvalidLoginException');
+Import::exception('NoUserException');
+
 class ActionUsuario extends AbstractAction
 {
 	public function getDao()
@@ -12,17 +15,16 @@ class ActionUsuario extends AbstractAction
 		return $this->dao;
 	}
 	
-	public function isUsuarioLogado(IRequest $request)
+	public function checkLoginData(IRequest $request)
 	{
-		
 		$usuario = new Usuario();
-		if($request)
-		{
-			
-		}
+		$usuario->setUsuario($request->get('usuario'));
+		$usuario->setSenha($request->get('senha'));
+		
+		$usuario = $this->getDao()->selectUsuario($usuario);
+		
+		if (!($usuario->TotalUsuario == 1))
+			throw new InvalidLoginException();
 	}
-	
-	
 }
-
 ?>

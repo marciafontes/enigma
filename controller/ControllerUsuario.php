@@ -1,6 +1,7 @@
 <?php
 include_once '../../helpers/Import.php';
 Import::controller('AbstractController');
+Import::action('ActionUsuario');
 
 class ControllerUsuario extends AbstractController
 {
@@ -8,15 +9,26 @@ class ControllerUsuario extends AbstractController
 	{
 		if ($this->action==null)
 			$this->action = new ActionUsuario();
+		
 		return $this->action;
 	}
 	
 	public function acessoUsuario(IRequest $request)
 	{
-		/* try
+		if ($request->isElement('logarUsuario'))
 		{
-			
-		} */
+			try
+			{
+				$this->getAction()->checkLoginData($request);
+				
+				header('Location: /' . Config::PROJECT_NAME . '/view/aluno/index.php?page=inicio');
+			}
+			catch (InvalidLoginException $e)
+			{
+				Message::alert($e->getMessage());
+				header('Location: /' . Config::PROJECT_NAME . '/view/inicio/index.php?page=loginUsuario');
+			}
+		}
 	}
 	
 	public function securityAluno()
