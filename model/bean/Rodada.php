@@ -9,6 +9,9 @@ class Rodada
 	private $jogoId;
 	private $introducao;
 	private $premioRodada;
+	private $feedback;
+	private $assunto;
+	private $conteudoAssunto;
 	
 	public function setId($id)
 	{
@@ -43,6 +46,20 @@ class Rodada
 		$this->premioRodada = $premioRodada;
 	}
 	
+	public function setFeedback($feedback)
+	{
+		$this->feedback = $feedback;
+	}
+	
+	public function setAssunto($assunto)
+	{
+		$this->assunto = $assunto;
+	}
+	
+	public function setConteudoAssunto($conteudoAssunto)
+	{
+		$this->conteudoAssunto = $conteudoAssunto;
+	}
 	public function getId()
 	{
 		return $this->id;
@@ -75,5 +92,21 @@ class Rodada
 	{
 		return $this->premioRodada;
 	}
+	
+	public function getFeedback()
+	{
+		return $this->feedback;
+	}
+	
+	public function getAssunto()
+	{
+		return $this->assunto;
+	}
+	
+	public function getConteudoAssunto()
+	{
+		return $this->conteudoAssunto;
+	}
+	
 }
 ?>

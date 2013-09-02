@@ -50,7 +50,7 @@ class ControllerUsuario extends AbstractController
 		$userClass = new Usuario();
 		
 		if ($userClass->logout())
-			header("Location: /senigma/view/inicio/index.php?page=loginUsuario");
+			header("Location: /Senigma/view/inicio/index.php?page=loginUsuario");
 	}
 }
 ?>

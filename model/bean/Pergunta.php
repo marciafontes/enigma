@@ -2,16 +2,19 @@
 class Pergunta
 {
 	private $id;
-	private $idAssunto;
-	private $comandoPergunta;
+	private $idRodada;
+	private $nomePergunata;
+	private $pergunta;
+	private $metaPergunta;
+	private $tipo;
 
 	public function setId($id)
 	{
 		$this->id = $id;
 	}
-	public function setIdAssunto($idAssunto)
+	public function setIdRodade($idRodada)
 	{
-		$this->idAssunto = $idAssunto;
+		$this->idRodada = $idRodada;
 	}
 	public function setComandoPergunta($comandoPergunta)
 	{

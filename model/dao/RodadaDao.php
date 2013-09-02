@@ -16,5 +16,14 @@ class RodadaDao extends AbstractDao
 		
 		return $this->fetchAllStmtObject('Rodada');
 	}
+	
+	public function selectAllRodada()
+	{
+		$this->sql = 'SELECT id_rodada,ngm_jogo_id_jogo,nomerodada, nperguntas,
+								 metarodada, jogoid, introducao, premiorodada, 
+									feedback, assunto,conteudoAssunto
+										 FROM ngm_rodada';
+		
+	}
 }
 ?>
