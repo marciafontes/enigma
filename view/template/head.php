@@ -4,7 +4,7 @@
 <script type="text/javascript" src="../template/js/jv-1.js"></script>
 <!-- <script type="text/javascript" src="../template/js/jv-2.font.js"></script> -->
 <script type="text/javascript" src="../template/js/modern.custom.js"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="../template/js/jquery.min.js"></script>
 <script type="text/javascript" src="../template/js/mainLoginForm.js"></script>
 
 <link rel="stylesheet" type="text/css" href="../template/css/style.css" />

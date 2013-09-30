@@ -3,7 +3,7 @@
 <head> 
 <?php 
 include_once '../../helpers/Import.php';
-Import::template('head');
+ Import::template('head');
 ?>
 </head> 
 <body> 

@@ -2,6 +2,8 @@
 include_once '../../helpers/Import.php';
 Import::action('AbstractAction');
 Import::bean('Pergunta');
+Import::dao('PerguntaDao');
+
 class ActionPergunta extends AbstractAction
 {
 	public function getDao()
@@ -12,9 +14,22 @@ class ActionPergunta extends AbstractAction
 		return $this->dao;
 	}
 	
-	public function getPerguntaByIdRodadaAndAssunto()
+	public function getAllIdPerguntaByIdRodada(IRequest $request)
 	{
+		$pergunta = new Pergunta();
 		
+		$pergunta->setIdRodada($request->get('idRodada'));
+		
+		return $this->getDao()->selectAllIdPerguntaByIdRodada($pergunta);
+	}
+	
+	public function getPerguntaRodadaByIdRodadaAssunto(IRequest $request)
+	{
+		$pergunta = new Pergunta();
+		
+		$pergunta->setIdRodada($request->get('idRodada'));
+		
+		return $this->getDao()->selectPerguntaRodadaByIdRodadaAssunto($pergunta);
 	}
 }
 ?>

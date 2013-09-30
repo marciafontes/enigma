@@ -3,7 +3,7 @@ class Pergunta
 {
 	private $id;
 	private $idRodada;
-	private $nomePergunata;
+	private $nomePergunta;
 	private $pergunta;
 	private $metaPergunta;
 	private $tipo;
@@ -12,25 +12,56 @@ class Pergunta
 	{
 		$this->id = $id;
 	}
-	public function setIdRodade($idRodada)
+	public function setIdRodada($idRodada)
 	{
 		$this->idRodada = $idRodada;
 	}
-	public function setComandoPergunta($comandoPergunta)
+	public function setNomePergunta($nomePergunta)
 	{
-		$this->comandoPergunta = $comandoPergunta;
+		$this->nomePergunta = $nomePergunta;
 	}
-	
+
+	public function setPergunta($pergunta)
+	{
+		$this->pergunta = $pergunta;
+	}
+
+	public function setMetaPergunta($metaPergunta)
+	{
+		$this->metaPergunta = $metaPergunta;
+	}
+
+	public function setTipo($tipo)
+	{
+		$this->tipo = $tipo;
+	}
+
 	public function getId()
 	{
 		return $this->id;
 	}
-	public function getIdAssunto()
+
+	public function getIdRodada()
 	{
-		return $this->idAssunto;
+		return $this->idRodada;
 	}
-	public function getComandoPergunta()
+
+	public function getNomePergunta()
 	{
-		return $this->comandoPergunta;
+		return $this->nomePergunta;
+	}
+
+	public function getPergunta()
+	{
+		return $this->pergunta;
+	}
+
+	public function getmetaPergunta()
+	{
+		return $this->metaPergunta;
+	}
+	public function getTipo()
+	{
+		return $this->tipo;
 	}
 }

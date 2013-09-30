@@ -13,4 +13,13 @@ class ActionResposta extends AbstractAction
 			$this->dao = new RespostaDao();
 		return $this->dao;
 	}
+	
+	public function getRespostaByIdPergunta(IRequest $request)
+	{
+		$resposta = new Resposta();
+		
+		$resposta->setIdPergunta($request->get('idPergunta'));
+		
+		return $this->getDao()->selectRespostaByIdPergunta($resposta);
+	}
 }

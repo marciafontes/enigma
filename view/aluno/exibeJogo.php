@@ -1,1 +1,1 @@
-<h2 class="headPage">Per</h2>
+<h2 class="headPage">Pergunta</h2>
