@@ -41,6 +41,8 @@ $request = new Request();
 </html>
 
 <?php 
+
+	//var_dump($request);
 	//$requestResposta = new Request();
 
 	 $controllerSubmissao->cadastrarSubmissao($request);
