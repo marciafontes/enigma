@@ -23,6 +23,9 @@ class ActionUsuario extends AbstractAction
 		
 		$usuario = $this->getDao()->selectUsuario($usuario);
 		
+		Session::start();
+		Session::set('idUsuario', $usuario->getId());
+		
 		if (!($usuario->TotalUsuario == 1))
 			throw new InvalidLoginException();
 	}

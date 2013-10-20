@@ -24,11 +24,11 @@ class PerguntaDao extends AbstractDao
 									   WHERE p.ngm_rodada_id_rodada=? AND p.id_pergunta NOT IN (SELECT s.ngm_pergunta_id_pergunta FROM ngm_submissao s )
 										     ORDER BY RAND()
 				 								      LIMIT 1';
-		$this->prepare ();
+		$this->prepare();
 		
-		$this->setValue ( $pergunta->getIdRodada () );
+		$this->setValue($pergunta->getIdRodada());
 		
-		return $this->fetchStmtObject ( 'Pergunta' );
+		return $this->fetchStmtObject('Pergunta');
 	}
 }
 ?>

@@ -13,7 +13,7 @@
 .hi-icon-wrap {
 	text-align: center;
 	margin: 0 auto;
-	padding: 2em 0 3em;
+	padding: 10px 0 20px;
 }
 
 .hi-icon-wrap2 {
@@ -27,7 +27,7 @@
 	display: inline-block;
 	font-size: 12px;
 	cursor: pointer;
-	margin: -10px 10px;
+	margin: 10px 5	px;
 	width: 95px;
 	height: 95px;
 	border-radius: 50%;
@@ -309,7 +309,7 @@
 
 /* Effect 3a */
 .hi-icon-effect-3a .hi-icon {
-	color: #f06060;
+	color: #333;
 }
 
 .no-touch .hi-icon-effect-3a .hi-icon:hover {
@@ -330,7 +330,7 @@
 }
 
 .no-touch .hi-icon-effect-3b .hi-icon:hover {
-	color: #f06060;
+	color: #333;
 }
 
 .hi-icon-effect-3b .hi-icon:after {

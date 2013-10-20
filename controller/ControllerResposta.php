@@ -16,16 +16,10 @@ class ControllerResposta extends AbstractController
 	
 	public function showRespostaByIdPergunta(IRequest $request)
 	{
-		
 		$respostas = $this->getAction()->getRespostaByIdPergunta($request);
 		
 		if ($respostas)
-		{
-				$this->buildRespostas($respostas);
-				
-		}
-		
-		
+			$this->buildRespostas($respostas);
 	}
 	
 	public function buildRespostas( $respostas)
@@ -36,11 +30,11 @@ class ControllerResposta extends AbstractController
 		for ($i=0;$i<5;$i++)
 		{
 			echo '<div style="background: '.$colors[$i].'; color: #000">';
-			echo' <input type="radio" name="respostas" value="'.$respostas[$i]->getIdResposta().'" />'.$alternativas[$i].$respostas[$i]->getResposta().'<br>';
+			echo '<label>';
+			echo' <input type="radio" name="idResposta" value="'.$respostas[$i]->getIdResposta().'" />'.$alternativas[$i].$respostas[$i]->getResposta().'<br>';
+			echo '</label>';
 			echo '</div>';
 		} 
-		
 	}
-	
 }
 ?>

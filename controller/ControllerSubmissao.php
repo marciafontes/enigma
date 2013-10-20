@@ -12,16 +12,22 @@ class ControllerSubmissao extends AbstractController
 		return $this->action;
 	}
 	
-	public function cadastrarSubmissao(IRequest$request)
+	public function cadastrarSubmissaoResposta(IRequest $request)
 	{
 		
-		if ($request->isElement ( 'SubmissaoResposta' ))
+		if ($request->isElement ('submissaoResposta'))
 		{
-			// $this->getAction()->setSubmissao();
+			$request->remove('submissaoResposta');
 			
-			header ( 'Location: /' . Config::PROJECT_NAME . '/view/aluno/index.php?page=exibePerguntasRodada&idJogo=' . $request->get ( 'idJogo' ) . '&idRodada=' . $request->get ( 'idRodada' ) );
+			try 
+			{
+				$this->getAction()->saveSubmissaoResposta($request);
+			}
+			catch (Exception $e)
+			{
+				Message::fail($e->getMessage());
+			}
 		}
-		// header('Location: /' . Config::PROJECT_NAME . '/view/inicio/index.php?page=loginUsuario');
 	}
 }
 ?>

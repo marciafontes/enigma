@@ -28,10 +28,10 @@ class ControllerJogo extends AbstractController
 	
 	private function createBoxJogo(Jogo $jogo)
 	{
-		echo '<div style="border:1px solid red; float:left; width:350px; height:auto; padding:20px 0;">';
-			echo '<br/><br/><br/><a href="index.php?page=exibeRodadas&idJogo='. $jogo->getId() .'" class="hi-icon hi-icon-gamepad" title="Jogar">Jogo '.$jogo->getId().'</a>';
-			echo '<br/>Descrição: ' . $jogo->getDescricao();
-			echo '<br/>Premio do Jogo: ' . $jogo->getPermioFinal();
+		echo '<div class="boxJogo">';
+			echo '<a href="index.php?page=exibeRodadas&idJogo='. $jogo->getId() .'" class="hi-icon hi-icon-gamepad" title="Jogar">Jogo '.$jogo->getId().'</a>';
+			echo '<p><strong>Descrição: </strong>' . $jogo->getDescricao() . '</p>';
+			echo '<p><strong>Premio do Jogo: </strong>' . $jogo->getPermioFinal() . '</p>';
 		echo '</div>';
 	}
 }

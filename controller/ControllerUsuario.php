@@ -47,10 +47,8 @@ class ControllerUsuario extends AbstractController
 	
 	public function sairSistema()
 	{
-		$userClass = new Usuario();
-		
-		if ($userClass->logout())
-			header("Location: /enigma/view/inicio/index.php?page=loginUsuario");
+		Session::destroy();
+		header("Location: /" . Config::PROJECT_NAME . "/view/inicio/index.php?page=loginUsuario");
 	}
 }
 ?>

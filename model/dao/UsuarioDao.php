@@ -8,7 +8,7 @@ class UsuarioDao extends AbstractDao
 {
 	public function selectUsuario(Usuario $usuario)
 	{
-		$this->sql = 'SELECT COUNT(*) TotalUsuario 
+		$this->sql = 'SELECT COUNT(*) TotalUsuario, id
 						FROM ngm_usuario
 						WHERE usuario=? AND senha=?';
 		

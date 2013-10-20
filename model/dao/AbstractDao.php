@@ -13,7 +13,7 @@ class AbstractDao
 	{
 		try
 		{
-			return new PDO('mysql:host=' . Config::HOST_NAME . ';dbname=' . Config::DB_NAME, Config::DB_USER, Config::DB_PASS);
+			return new PDO('mysql:host=' . Config::DB_HOST . ';dbname=' . Config::DB_NAME, Config::DB_USER, Config::DB_PASS);
 		}
 		catch(PDOException $error)
 		{

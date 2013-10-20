@@ -1,49 +1,42 @@
 <?php
 include_once '../../helpers/Import.php';
+
 Import::controller('ControllerPergunta');
 Import::controller('ControllerResposta');
 Import::controller('ControllerSubmissao');
 
-Import::bean('Pergunta');
+Security::restrictByPerfil();
 
 $controllerPergunta = new ControllerPergunta();
 $controllerResposta = new ControllerResposta();
 $controllerSubmissao = new ControllerSubmissao();
 
+
 $request = new Request();
+
+$controllerSubmissao->cadastrarSubmissaoResposta($request);
 
 //$controllerPergunta->securiryPerguntaRespondida($request);
 
-//$controllerPergunta->showFeedbackPergunta($request);
+$controllerPergunta->showFeedbackPergunta($request);
+
 ?>
-
-<html>
-<body>
-	<div class="avatar">
-	<?php
-	
-	$idPergunta = $controllerPergunta->showPerguntaByRodadaAssunto ( $request );
-	$request->add ( 'idPergunta', $idPergunta );
-	?>
-	</div>
- 		<form method="post" action="index.php?page=exibePerguntasRodada" name="formRespostas">
-			<fieldset>
-				<legend>
-					<strong>Alternativas :</strong>
-				</legend>
-				<?php $controllerResposta->showRespostaByIdPergunta($request);?><br>
-				<input type="submit" value="Responder" name="SubmissaoResposta" />
-				<input type="hidden" name="serialize" value="<?php $request;?>">
-			</fieldset>
-		</form>
-
-</body>
-</html>
-
-<?php 
-
-	//var_dump($request);
-	//$requestResposta = new Request();
-
-	 $controllerSubmissao->cadastrarSubmissao($request);
+<div class="avatar">
+<?php
+	$idPergunta = $controllerPergunta->showPerguntaByRodadaAssunto($request);
+	$request->add('idPergunta', $idPergunta);
 ?>
+</div>
+
+<form method="post" action="index.php?page=exibePerguntasRodada" name="formRespostas">
+	<fieldset>
+		<legend>
+			<strong>Alternativas:</strong>
+		</legend>
+		<?php $controllerResposta->showRespostaByIdPergunta($request);?><br>
+		<input type="submit" value="Responder" name="submissaoResposta" />
+		<input type="hidden" name="idPergunta" value="<?php echo $request->get('idPergunta'); ?>">
+		<input type="hidden" name="idJogo" value="<?php echo $request->get('idJogo'); ?>">
+		<input type="hidden" name="idRodada" value="<?php echo $request->get('idRodada'); ?>">
+	</fieldset>
+</form>

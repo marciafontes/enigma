@@ -36,6 +36,12 @@ class Request implements IRequest
 		$this->arrayRequest[$key] = $value;
 	}
 	
+	public function remove($key)
+	{
+		if (isset($this->arrayRequest[$key]))
+			unset($this->arrayRequest[$key]);
+	}
+	
 	public function isElement($key)
 	{
 		if (isset($this->arrayRequest[$key]))

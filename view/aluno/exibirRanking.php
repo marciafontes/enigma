@@ -1,0 +1,1 @@
+<h2 class="headPage">Ranking</h2>

@@ -17,7 +17,7 @@ include_once '../../helpers/Import.php';
 				echo 'erro';
 		?>
 		<div id="rodape">
-			<p align="center"> @2013 </p>
+			<?php Import::template('footer')?>
 		</div>
 	</div>
 </body>
