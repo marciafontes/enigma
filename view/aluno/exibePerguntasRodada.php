@@ -21,6 +21,9 @@ $controllerSubmissao->cadastrarSubmissaoResposta($request);
 $controllerPergunta->showFeedbackPergunta($request);
 
 ?>
+<div id="messageFeedback">
+</div>
+
 <div class="avatar">
 <?php
 	$idPergunta = $controllerPergunta->showPerguntaByRodadaAssunto($request);
@@ -40,3 +43,5 @@ $controllerPergunta->showFeedbackPergunta($request);
 		<input type="hidden" name="idRodada" value="<?php echo $request->get('idRodada'); ?>">
 	</fieldset>
 </form>
+
+<script type="text/javascript" src="../template/js/codes.exibePerguntasRodada.js"></script>

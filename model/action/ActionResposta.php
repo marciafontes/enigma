@@ -22,4 +22,13 @@ class ActionResposta extends AbstractAction
 		
 		return $this->getDao()->selectRespostaByIdPergunta($resposta);
 	}
+	
+	public function getFeedbackRespostaById($idResposta)
+	{
+		$resposta = new Resposta();
+		
+		$resposta->setIdResposta($idResposta);
+		
+		return $this->getDao()->getFeedbackResposta($resposta);
+	}
 }

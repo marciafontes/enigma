@@ -4,6 +4,7 @@ include_once '../../helpers/Import.php';
 Import::action('AbstractAction');
 Import::bean('Submissao');
 Import::dao('SubmissaoDao');
+Import::action('ActionResposta');
 
 class ActionSubmissao extends AbstractAction
 {
@@ -22,8 +23,19 @@ class ActionSubmissao extends AbstractAction
 		$submissao->setIdResposta($request->get('idResposta'));
 		$submissao->setIdUsuario(Session::get('idUsuario'));
 		
-		if (!$this->getDao()->insertSubmissaoPergunta($submissao))
+		$isSubmissaoInserted = $this->getDao()->insertSubmissaoPergunta($submissao);
+		
+		if (!$isSubmissaoInserted)
 			throw new Exception('Falha de Inserção');
+		
+		$actionResposta = new ActionResposta();
+
+		$feedbakcResposta = $actionResposta->getFeedbackRespostaById($request->get('idResposta'));
+		
+		if (!$feedbakcResposta)
+			throw new Exception('Sem Feedback para a Resposta!');
+		
+		return $feedbakcResposta->getFeedback();
 	}
 }
 ?>

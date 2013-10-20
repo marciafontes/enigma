@@ -14,14 +14,17 @@ class ControllerSubmissao extends AbstractController
 	
 	public function cadastrarSubmissaoResposta(IRequest $request)
 	{
-		
-		if ($request->isElement ('submissaoResposta'))
+		if ($request->isElement ('idResposta'))
 		{
-			$request->remove('submissaoResposta');
-			
 			try 
 			{
-				$this->getAction()->saveSubmissaoResposta($request);
+				$stringFeedback = $this->getAction()->saveSubmissaoResposta($request);
+				
+				$arrayJson = array();
+				
+				$arrayJson['feedback'] = $stringFeedback;
+				
+				Message::information($stringFeedback);
 			}
 			catch (Exception $e)
 			{

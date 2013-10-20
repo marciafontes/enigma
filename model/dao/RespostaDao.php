@@ -27,4 +27,15 @@ class RespostaDao extends AbstractDao
 		
 		return $this->fetchAllStmtObject('Resposta');
 	}
+	
+	public function getFeedbackResposta(Resposta $resposta)
+	{
+		$this->sql = 'SELECT feedback FROM `ngm_resposta` WHERE id_resposta = ?';
+		
+		$this->prepare();
+		
+		$this->setValue($resposta->getIdResposta());
+		
+		return $this->fetchStmtObject('Resposta');
+	}
 }

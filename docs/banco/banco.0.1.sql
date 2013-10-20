@@ -1,6 +1,6 @@
 CREATE DATABASE sistema_enigma;
 USE sistema_enigma;
-
+ 
 CREATE TABLE ngm_avatar (
   id_avatar INT NOT NULL,
   avatar BLOB NULL,

@@ -1,24 +1,26 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.10.1deb1
+-- version 4.0.3
 -- http://www.phpmyadmin.net
 --
--- Servidor: localhost
--- Tempo de Geração: 03/10/2013 às 10h43min
--- Versão do Servidor: 5.5.32
--- Versão do PHP: 5.3.10-1ubuntu3.8
+-- M�quina: 127.0.0.1
+-- Data de Cria��o: 21-Out-2013 �s 00:32
+-- Vers�o do servidor: 5.6.12-log
+-- vers�o do PHP: 5.5.0
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES latin1 */;
 
 --
--- Banco de Dados: `sistema_enigma`
+-- Base de Dados: `sistema_enigma`
 --
+CREATE DATABASE IF NOT EXISTS `sistema_enigma` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `sistema_enigma`;
 
 -- --------------------------------------------------------
 
@@ -134,7 +136,7 @@ CREATE TABLE IF NOT EXISTS `ngm_jogo` (
 --
 
 INSERT INTO `ngm_jogo` (`id_jogo`, `jogo`, `descricao`, `nrodada`, `metajogo`, `premiofinal`, `tipo`) VALUES
-(1, 'Jogo para o NPI', 'Este jogo foi feito para todos os alunos do NPI e afins', 10, 100, 'codigo fonte de um programa ou informaÃ§Ãµes sovre tal coisa', NULL);
+(1, 'Jogo para o NPI', 'Este jogo foi feito para todos os alunos do NPI e afins', 10, 100, 'codigo fonte de um programa ou informações sovre tal coisa', NULL);
 
 -- --------------------------------------------------------
 
@@ -181,17 +183,19 @@ CREATE TABLE IF NOT EXISTS `ngm_pergunta` (
   `metapergunta` int(11) DEFAULT NULL,
   `tipo` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`id_pergunta`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Extraindo dados da tabela `ngm_pergunta`
 --
 
 INSERT INTO `ngm_pergunta` (`id_pergunta`, `ngm_rodada_id_rodada`, `nomepergunta`, `pergunta`, `metapergunta`, `tipo`) VALUES
-(1, 1, 'Palindromes', 'Qual das seguintes cadeias é palíndrome quebrada?', 70, 'objetiva'),
-(2, 1, 'Palindromes', 'Considere as seguintes cadeias:\r\n(i) BIT\r\n(ii) AAAEAEAEAAA\r\n(iii) SUBINOONIBUS\r\n(iv) TIPOERROTUDO\r\n(v) ERAREHUMANO\r\nQual das seguintes afirmações é correta?', 70, 'objetiva'),
-(3, 2, 'Roland', 'Qual o número total de partidas deste torneio?', 70, 'objetiva'),
-(4, 2, 'Roland', 'Quantas rodadas existem, no total, durante o torneio?', 70, 'objetiva');
+(1, 1, 'PERGUNTA 01', 'COMANDO PERGUNTA 01', 70, 'objetiva'),
+(2, 1, 'PERGUNTA 02', 'COMANDO PERGUNTA 02', 70, 'objetiva'),
+(3, 1, 'PERGUNTA 03', 'COMANDO PERGUNTA 03', 70, 'objetiva'),
+(4, 1, 'PERGUNTA 04', 'COMANDO PERGUNTA 04', 70, 'objetiva'),
+(5, 1, 'PERGUNTA 05', 'COMANDO PERGUNTA 05', 70, 'objetiva'),
+(6, 1, 'PERGUNTA 06', 'COMANDO PERGUNTA 06', 70, 'objetiva');
 
 -- --------------------------------------------------------
 
@@ -237,33 +241,43 @@ CREATE TABLE IF NOT EXISTS `ngm_resposta` (
   `pontuacao` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_resposta`),
   KEY `ngm_pergunta_id_pergunta` (`ngm_pergunta_id_pergunta`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=111 ;
 
 --
 -- Extraindo dados da tabela `ngm_resposta`
 --
 
 INSERT INTO `ngm_resposta` (`id_resposta`, `ngm_pergunta_id_pergunta`, `resposta`, `feedback`, `respostacorreta`, `pontuacao`) VALUES
-(1, 1, 'TODOS', 'Acertou', 1, 1),
-(2, 1, 'AZULMARINHO', 'errou', 0, 0),
-(3, 1, 'NAOMARQUEAQUI', 'errou', 0, 0),
-(4, 1, 'PROGRAMAR', 'errou', 0, 0),
-(5, 1, 'FIM', 'errou', 0, 0),
-(6, 3, '64', 'errou', 0, 0),
-(7, 3, '65', 'errou', 0, 0),
-(8, 3, '127', 'acertou', 1, 1),
-(9, 3, '128', 'errou', 0, 0),
-(10, 3, 'nenhuma das acima', 'errou', 0, 0),
-(11, 2, '(i) e (ii) são palíndromes puras', 'errou', 0, 0),
-(12, 2, '(iv) e (v) são palíndromes quebradas', 'errou', 0, 0),
-(13, 2, '(ii) não é palíndrome pura', 'errou', 0, 0),
-(14, 2, '(iii) é palíndrome pura e (iv) é palíndrome q', 'acertou', 1, 1),
-(15, 2, '(v) é palíndrome quebrada', 'errou', 0, 0),
-(16, 4, '8', 'errou', 0, 0),
-(17, 4, '9', 'errou', 0, 0),
-(18, 4, '10', 'errou', 0, 0),
-(19, 4, '16', 'errou', 0, 0),
-(20, 4, 'nenhuma das acima', 'Paranéns acertou', 1, 1);
+(81, 1, 'RESPOSTA PERGUNTA 01', 'FEEDBACK NEGATIVO', 0, 0),
+(82, 1, 'RESPOSTA PERGUNTA 01', 'FEEDBACK NEGATIVO', 0, 0),
+(83, 1, 'RESPOSTA PERGUNTA 01', 'FEEDBACK NEGATIVO', 0, 0),
+(84, 1, 'RESPOSTA PERGUNTA 01 [ok]', 'FEEDBACK POSITIVO', 1, 1),
+(85, 1, 'RESPOSTA PERGUNTA 01', 'FEEDBACK NEGATIVO', 0, 0),
+(86, 2, 'RESPOSTA PERGUNTA 02', 'FEEDBACK NEGATIVO', 0, 0),
+(87, 2, 'RESPOSTA PERGUNTA 02 [ok]', 'FEEDBACK POSITIVO', 1, 1),
+(88, 2, 'RESPOSTA PERGUNTA 02', 'FEEDBACK NEGATIVO', 0, 0),
+(89, 2, 'RESPOSTA PERGUNTA 02', 'FEEDBACK NEGATIVO', 0, 0),
+(90, 2, 'RESPOSTA PERGUNTA 02', 'FEEDBACK NEGATIVO', 0, 0),
+(91, 3, 'RESPOSTA PERGUNTA 03 [ok]', 'FEEDBACK POSITIVO', 1, 1),
+(92, 3, 'RESPOSTA PERGUNTA 03', 'FEEDBACK NEGATIVO', 0, 0),
+(93, 3, 'RESPOSTA PERGUNTA 03', 'FEEDBACK NEGATIVO', 0, 0),
+(94, 3, 'RESPOSTA PERGUNTA 03', 'FEEDBACK NEGATIVO', 0, 0),
+(95, 3, 'RESPOSTA PERGUNTA 03', 'FEEDBACK NEGATIVO', 0, 0),
+(96, 4, 'RESPOSTA PERGUNTA 04', 'FEEDBACK NEGATIVO', 0, 0),
+(97, 4, 'RESPOSTA PERGUNTA 04', 'FEEDBACK NEGATIVO', 0, 0),
+(98, 4, 'RESPOSTA PERGUNTA 04', 'FEEDBACK NEGATIVO', 0, 0),
+(99, 4, 'RESPOSTA PERGUNTA 04', 'FEEDBACK NEGATIVO', 0, 0),
+(100, 4, 'RESPOSTA PERGUNTA 04 [ok]', 'FEEDBACK POSITIVO', 1, 1),
+(101, 5, 'RESPOSTA PERGUNTA 05', 'FEEDBACK NEGATIVO', 0, 0),
+(102, 5, 'RESPOSTA PERGUNTA 05 [ok]', 'FEEDBACK POSITIVO', 1, 1),
+(103, 5, 'RESPOSTA PERGUNTA 05', 'FEEDBACK NEGATIVO', 0, 0),
+(104, 5, 'RESPOSTA PERGUNTA 05', 'FEEDBACK NEGATIVO', 0, 0),
+(105, 5, 'RESPOSTA PERGUNTA 05', 'FEEDBACK NEGATIVO', 0, 0),
+(106, 6, 'RESPOSTA PERGUNTA 06', 'FEEDBACK NEGATIVO', 0, 0),
+(107, 6, 'RESPOSTA PERGUNTA 06', 'FEEDBACK NEGATIVO', 0, 0),
+(108, 6, 'RESPOSTA PERGUNTA 06', 'FEEDBACK NEGATIVO', 0, 0),
+(109, 6, 'RESPOSTA PERGUNTA 06 [ok]', 'FEEDBACK POSITIVO', 1, 1),
+(110, 6, 'RESPOSTA PERGUNTA 06', 'FEEDBACK NEGATIVO', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -292,12 +306,12 @@ CREATE TABLE IF NOT EXISTS `ngm_rodada` (
 --
 
 INSERT INTO `ngm_rodada` (`id_rodada`, `ngm_jogo_id_jogo`, `nomerodada`, `nperguntas`, `metarodada`, `jogoid`, `introducao`, `premiorodada`, `feedback`, `assunto`, `conteudoAssunto`) VALUES
-(1, 1, 'rodada matemÃ¡tica', 6, 70, 1, 'Introdução a Rodada', 'codigo Rodada Prêmio', NULL, 'Palindromes', 'Uma cadeia de caracteres é chamada de palíndrome pura se a seqüência de caracteres da esquerda\r\npara a direita é igual à seqüência de caracteres da direita para a esquerda (uma outra definição é\r\nque o primeiro caractere da cadeia deve ser igual ao último caractere, o segundo caractere seja\r\nigual ao penúltimo caractere, o terceiro caractere seja igual ao antepenúltimo caractere, e assim\r\npor diante). Por exemplo, as cadeias de caracteres ‘MIM’ , ‘AXXA’ e ‘ANANAGANANA’ são palíndromes puras.\r\n\r\nUma outra definição de palíndrome utiliza comparações entre caracteres, considerando que os caracteres são ordenados crescentemente de A até Z, ou seja, A < B < C < ... < Z. Uma cadeia de caracteres é chamada de palíndrome quebrada se a seqüência de resultados da comparação entre o primeiro e o segundo caracteres é igual ao resultado da comparação entre o último e o penúltimo caractere, e o resultado da comparação entre o segundo e o terceiro caracteres é igual ao resultado da comparação entre o penúltimo e o antepenúltimo caracteres, e assim por diante. Por exemplo, as cadeias ‘MIN’ e ‘ASSOCFUUS’ são palíndromes quebradas. Obviamente, toda cadeia que é palíndrome pura é também palíndrome quebrada.\r\n'),
-(2, 1, 'rodada portuguÃªs', 6, 70, 1, 'Introdução Rodada', 'Codigo Premio Rodada', NULL, 'Rolangaros', 'No torneio de Roland Garros, um dos mais tradicionais torneios de tênis do mundo, realizado em\r\nParis, participam 128 tenistas. Em cada partida, participam dois jogadores, sendo que o vencedor\r\npassa para a próxima fase, e o perdedor é eliminado do torneio. A cada rodada, os tenistas que\r\nainda continuam no torneio participam de exatamente uma partida.'),
-(3, 1, 'Rodada Historia', 6, 70, 1, 'Introdução da Rodada', 'Codigo Rodada do Premio', NULL, 'Cavalos', 'O jogo de xadrez, alÃ©m de ser um jogo que exige bastante raciocÃ­nio, Ã© uma Ã³tima fonte de quebra-\r\ncabeÃ§as. Esta tarefa trata de um destes quebra-cabeÃ§as, envolvendo os movimentos de uma de\r\nsuas peÃ§as, o cavalo. Os movimentos do cavalo sÃ£o ditos em â€˜Lâ€™, pois ele sempre deve andar duas casas em uma direÃ§Ã£o e uma casa na direÃ§Ã£o perpendicular. A figura acima ilustra os possÃ­veis\r\nmovimentos do cavalo, onde o caractere â€˜Câ€™ indica a posiÃ§Ã£o inicial e o caractere â€˜â€¢â€™ representa as\r\npossÃ­veis posiÃ§Ãµes finais. Ã‰ importante notar que o cavalo Ã© a Ãºnica peÃ§a que pode saltar sobre\r\noutras peÃ§as do xadrez. Note ainda que na representaÃ§Ã£o que usamos nÃ£o distinguimos casas brancas\r\nde casas pretas no tabuleiro.\r\nUsando os movimentos do cavalo, vocÃª deve determinar qual o nÃºmero mÃ­nimo de movimentos\r\ndo cavalo para ir de uma casa InÃ­cio atÃ© uma casa Final, sendo proibido que o cavalo â€˜pareâ€™ sobre\r\nalgumas casas especificadas durante a sequÃªncia de movimentos.\r\nSÃ£o fornecidas vÃ¡rias configuraÃ§Ãµes do tabuleiro (8 por 8 casas), com as casas marcadas com os\r\nseguintes valores: - I: inÃ­cio - F: Final - X: proibido.'),
-(4, 1, 'Rodada Fisica', 6, 70, 1, 'Introdução da Rodada', 'Codigo Rodada do Premio', NULL, 'Biblioteca', 'Exatamente nove revistas devem ser expostas em uma das prateleiras da biblioteca da escola.\r\nVamos chamar a posiÃ§Ã£o mais Ã  esquerda de primeira, e a mais Ã  direita de nona posiÃ§Ã£o. Das\r\nnove revistas, quatro sÃ£o sobre ciÃªncia, trÃªs sÃ£o sobre esportes, e duas sÃ£o sobre culinÃ¡ria. As quatro\r\nrevistas sobre ciÃªncia devem ser colocados uma vizinha Ã  outra, e as duas revistas sobre culinÃ¡ria\r\ntambÃ©m devem ser dispostas uma vizinha Ã  outra (ou seja, uma ao lado da outra). As trÃªs\r\nrevistas sobre esportes nÃ£o precisam estar colocadas uma vizinha Ã  outra.'),
-(5, 1, 'Rodada Quimica', 6, 70, 1, 'Introdução da Rodada', 'Codigo Rodada do Premio', NULL, 'Salas de Aula', 'Uma escola conta com sete salas de aula que devem ser pintadas. As salas estÃ£o localizadas em\r\num Ãºnico lado do corredor, sendo numeradas sequencialmente, de um a sete, da frente para os\r\nfundos do prÃ©dio.\r\nCada sala de aula deve ser pintada utilizando uma Ãºnica cor, de acordo com as seguintes restriÃ§Ãµes:\r\nâ€¢ Duas salas devem ser pintadas de branco; duas salas devem ser pintadas de azul; duas salas\r\ndevem ser pintadas de verde; e uma sala deve ser pintada de amarelo.\r\nâ€¢ As duas salas pintadas de verde devem ser vizinhas (contÃ­guas).\r\nâ€¢ As duas salas pintadas de azul nÃ£o podem ser vizinhas (contÃ­guas).\r\nâ€¢ A sala pintada de amarelo nÃ£o pode ser vizinha de uma sala pintada de branco.\r\nâ€¢ A sala nÃºmero 3 deve ser pintada de branco.'),
-(6, 1, 'Rodada Biologia', 6, 70, 1, 'Introdução da Rodada', 'Codigo Rodada do Premio', NULL, 'Salas de Aula', 'Uma escola conta com sete salas de aula que devem ser pintadas. As salas estÃ£o localizadas em\r\num Ãºnico lado do corredor, sendo numeradas sequencialmente, de um a sete, da frente para os\r\nfundos do prÃ©dio.\r\nCada sala de aula deve ser pintada utilizando uma Ãºnica cor, de acordo com as seguintes restriÃ§Ãµes:\r\nâ€¢ Duas salas devem ser pintadas de branco; duas salas devem ser pintadas de azul; duas salas\r\ndevem ser pintadas de verde; e uma sala deve ser pintada de amarelo.\r\nâ€¢ As duas salas pintadas de verde devem ser vizinhas (contÃ­guas).\r\nâ€¢ As duas salas pintadas de azul nÃ£o podem ser vizinhas (contÃ­guas).\r\nâ€¢ A sala pintada de amarelo nÃ£o pode ser vizinha de uma sala pintada de branco.\r\nâ€¢ A sala nÃºmero 3 deve ser pintada de branco.');
+(1, 1, 'Matem�tica', 3, 70, 1, 'Introdu��o a Rodada', 'codigo Rodada Pr�mio', 'A RODADA FOI BOA!', 'Palindromes', 'ASSUNTO DA RODADA 01'),
+(2, 1, 'L. Portuguesa', 6, 70, 1, 'Introdu��o Rodada', 'Codigo Premio Rodada', NULL, 'Rolangaros', 'No torneio de Roland Garros, um dos mais tradicionais torneios de t�nis do mundo, realizado em\r\nParis, participam 128 tenistas. Em cada partida, participam dois jogadores, sendo que o vencedor\r\npassa para a pr�xima fase, e o perdedor � eliminado do torneio. A cada rodada, os tenistas que\r\nainda continuam no torneio participam de exatamente uma partida.'),
+(3, 1, 'Hist�ria', 6, 70, 1, 'Introdu��o da Rodada', 'Codigo Rodada do Premio', NULL, 'Cavalos', 'O jogo de xadrez, além de ser um jogo que exige bastante raciocínio, é uma ótima fonte de quebra-\r\ncabeças. Esta tarefa trata de um destes quebra-cabeças, envolvendo os movimentos de uma de\r\nsuas peças, o cavalo. Os movimentos do cavalo são ditos em �EUR~L�EURTM, pois ele sempre deve andar duas casas em uma direção e uma casa na direção perpendicular. A figura acima ilustra os possíveis\r\nmovimentos do cavalo, onde o caractere �EUR~C�EURTM indica a posição inicial e o caractere �EUR~�EUR��EURTM representa as\r\npossíveis posições finais. �o/oo importante notar que o cavalo é a única peça que pode saltar sobre\r\noutras peças do xadrez. Note ainda que na representação que usamos não distinguimos casas brancas\r\nde casas pretas no tabuleiro.\r\nUsando os movimentos do cavalo, você deve determinar qual o número mínimo de movimentos\r\ndo cavalo para ir de uma casa Início até uma casa Final, sendo proibido que o cavalo �EUR~pare�EURTM sobre\r\nalgumas casas especificadas durante a sequência de movimentos.\r\nSão fornecidas várias configurações do tabuleiro (8 por 8 casas), com as casas marcadas com os\r\nseguintes valores: - I: início - F: Final - X: proibido.'),
+(4, 1, 'F�sica', 6, 70, 1, 'Introdu��o da Rodada', 'Codigo Rodada do Premio', NULL, 'Biblioteca', 'Exatamente nove revistas devem ser expostas em uma das prateleiras da biblioteca da escola.\r\nVamos chamar a posição mais �  esquerda de primeira, e a mais �  direita de nona posição. Das\r\nnove revistas, quatro são sobre ciência, três são sobre esportes, e duas são sobre culinária. As quatro\r\nrevistas sobre ciência devem ser colocados uma vizinha �  outra, e as duas revistas sobre culinária\r\ntambém devem ser dispostas uma vizinha �  outra (ou seja, uma ao lado da outra). As três\r\nrevistas sobre esportes não precisam estar colocadas uma vizinha �  outra.'),
+(5, 1, 'Qu�mica', 6, 70, 1, 'Introdu��o da Rodada', 'Codigo Rodada do Premio', NULL, 'Salas de Aula', 'Uma escola conta com sete salas de aula que devem ser pintadas. As salas estão localizadas em\r\num único lado do corredor, sendo numeradas sequencialmente, de um a sete, da frente para os\r\nfundos do prédio.\r\nCada sala de aula deve ser pintada utilizando uma única cor, de acordo com as seguintes restrições:\r\n�EUR� Duas salas devem ser pintadas de branco; duas salas devem ser pintadas de azul; duas salas\r\ndevem ser pintadas de verde; e uma sala deve ser pintada de amarelo.\r\n�EUR� As duas salas pintadas de verde devem ser vizinhas (contíguas).\r\n�EUR� As duas salas pintadas de azul não podem ser vizinhas (contíguas).\r\n�EUR� A sala pintada de amarelo não pode ser vizinha de uma sala pintada de branco.\r\n�EUR� A sala número 3 deve ser pintada de branco.'),
+(6, 1, 'Biologia', 6, 70, 1, 'Introdu��o da Rodada', 'Codigo Rodada do Premio', NULL, 'Salas de Aula', 'Uma escola conta com sete salas de aula que devem ser pintadas. As salas estão localizadas em\r\num único lado do corredor, sendo numeradas sequencialmente, de um a sete, da frente para os\r\nfundos do prédio.\r\nCada sala de aula deve ser pintada utilizando uma única cor, de acordo com as seguintes restrições:\r\n�EUR� Duas salas devem ser pintadas de branco; duas salas devem ser pintadas de azul; duas salas\r\ndevem ser pintadas de verde; e uma sala deve ser pintada de amarelo.\r\n�EUR� As duas salas pintadas de verde devem ser vizinhas (contíguas).\r\n�EUR� As duas salas pintadas de azul não podem ser vizinhas (contíguas).\r\n�EUR� A sala pintada de amarelo não pode ser vizinha de uma sala pintada de branco.\r\n�EUR� A sala número 3 deve ser pintada de branco.');
 
 -- --------------------------------------------------------
 
@@ -306,19 +320,19 @@ INSERT INTO `ngm_rodada` (`id_rodada`, `ngm_jogo_id_jogo`, `nomerodada`, `npergu
 --
 
 CREATE TABLE IF NOT EXISTS `ngm_submissao` (
-  `id_subimissao` int(11) NOT NULL AUTO_INCREMENT,
+  `id_submissao` int(11) NOT NULL AUTO_INCREMENT,
   `ngm_usuario_id_usuario` int(11) NOT NULL,
   `ngm_resposta_id_resposta` int(11) NOT NULL,
   `ngm_pergunta_id_pergunta` int(11) NOT NULL,
   `ngm_equipe_id_equipe` int(11) DEFAULT NULL,
   `datahora` datetime DEFAULT NULL,
   `solucaosubmetida` text,
-  PRIMARY KEY (`id_subimissao`),
+  PRIMARY KEY (`id_submissao`,`ngm_usuario_id_usuario`,`ngm_resposta_id_resposta`,`ngm_pergunta_id_pergunta`),
   KEY `ngm_usuario_id_usuario` (`ngm_usuario_id_usuario`),
   KEY `ngm_resposta_id_resposta` (`ngm_resposta_id_resposta`),
   KEY `ngm_pergunta_id_pergunta` (`ngm_pergunta_id_pergunta`),
   KEY `ngm_equipe_id_equipe` (`ngm_equipe_id_equipe`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=37 ;
 
 -- --------------------------------------------------------
 
@@ -343,7 +357,7 @@ CREATE TABLE IF NOT EXISTS `ngm_usuario` (
   `cidade` varchar(100) DEFAULT NULL,
   `estado` varchar(2) DEFAULT NULL,
   `pais` varchar(50) DEFAULT NULL,
-  `endereço` varchar(255) DEFAULT NULL,
+  `endere�o` varchar(255) DEFAULT NULL,
   `bairro` varchar(60) DEFAULT NULL,
   `cep` char(8) DEFAULT NULL,
   `rg` varchar(20) DEFAULT NULL,
@@ -365,27 +379,27 @@ CREATE TABLE IF NOT EXISTS `ngm_usuario` (
 -- Extraindo dados da tabela `ngm_usuario`
 --
 
-INSERT INTO `ngm_usuario` (`id`, `ngm_formacao_id_formacao`, `ngm_avatar_id_avatar`, `ngm_papeluser_id_papeluser`, `usuario`, `senha`, `nome`, `sobrenome`, `email`, `sexo`, `datanasc`, `celular`, `fone`, `cidade`, `estado`, `pais`, `endereço`, `bairro`, `cep`, `rg`, `cpf`, `facebook`, `google`, `outros`, `skype`, `blog`, `twitter`, `site`, `jogofavorito`, `matricula`, `status_2`) VALUES
+INSERT INTO `ngm_usuario` (`id`, `ngm_formacao_id_formacao`, `ngm_avatar_id_avatar`, `ngm_papeluser_id_papeluser`, `usuario`, `senha`, `nome`, `sobrenome`, `email`, `sexo`, `datanasc`, `celular`, `fone`, `cidade`, `estado`, `pais`, `endere�o`, `bairro`, `cep`, `rg`, `cpf`, `facebook`, `google`, `outros`, `skype`, `blog`, `twitter`, `site`, `jogofavorito`, `matricula`, `status_2`) VALUES
 (1, 1, 1, 1, 'iuri', '1234', 'iuri', 'gagari', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 --
--- Restrições para as tabelas dumpadas
+-- Constraints for dumped tables
 --
 
 --
--- Restrições para a tabela `ngm_resposta`
+-- Limitadores para a tabela `ngm_resposta`
 --
 ALTER TABLE `ngm_resposta`
   ADD CONSTRAINT `ngm_resposta_ibfk_1` FOREIGN KEY (`ngm_pergunta_id_pergunta`) REFERENCES `ngm_pergunta` (`id_pergunta`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para a tabela `ngm_rodada`
+-- Limitadores para a tabela `ngm_rodada`
 --
 ALTER TABLE `ngm_rodada`
   ADD CONSTRAINT `ngm_rodada_ibfk_1` FOREIGN KEY (`ngm_jogo_id_jogo`) REFERENCES `ngm_jogo` (`id_jogo`);
 
 --
--- Restrições para a tabela `ngm_submissao`
+-- Limitadores para a tabela `ngm_submissao`
 --
 ALTER TABLE `ngm_submissao`
   ADD CONSTRAINT `ngm_submissao_ibfk_1` FOREIGN KEY (`ngm_usuario_id_usuario`) REFERENCES `ngm_usuario` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
