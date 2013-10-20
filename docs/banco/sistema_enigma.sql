@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tempo de Geração: 18/09/2013 às 18h02min
+-- Tempo de Geração: 03/10/2013 às 10h43min
 -- Versão do Servidor: 5.5.32
 -- Versão do PHP: 5.3.10-1ubuntu3.8
 
@@ -318,7 +318,7 @@ CREATE TABLE IF NOT EXISTS `ngm_submissao` (
   KEY `ngm_resposta_id_resposta` (`ngm_resposta_id_resposta`),
   KEY `ngm_pergunta_id_pergunta` (`ngm_pergunta_id_pergunta`),
   KEY `ngm_equipe_id_equipe` (`ngm_equipe_id_equipe`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
