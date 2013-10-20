@@ -26,7 +26,7 @@ class ControllerResposta extends AbstractController
 	{
 		$colors = array("lightgreen","lightblue","lightgray","yellow","red");
 		$alternativas = array(0=>"A) ",1=>"B) ",2=>"C) ",3=>"D) ",4=>"E) ");
-		
+		 
 		for ($i=0;$i<5;$i++)
 		{
 			echo '<div style="background: '.$colors[$i].'; color: #000">';
